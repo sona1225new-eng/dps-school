@@ -1,12 +1,12 @@
 import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react' // or your framework plugin
+import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
   preview: {
-    allowedHosts: true,
+    allowedHosts: ['dps-school.onrender.com', '.onrender.com'],
   },
   server: {
-    allowedHosts: true,
-  }
+    allowedHosts: ['dps-school.onrender.com', '.onrender.com'],
+  },
 })
