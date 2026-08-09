@@ -9,6 +9,7 @@ import DirectorSection from './components/DirectorSection';
 import EducationSection from './components/EducationSection';
 import FutureSection from './components/FutureSection';
 import NewsNoticesSection from './components/NewsNoticesSection';
+import AchieversSection from './components/AchieversSection';
 import CtaSection from './components/CtaSection';
 import FooterSection from './components/FooterSection';
 import Modal from './components/Modal';
@@ -255,6 +256,8 @@ function App() {
         news={news}
         openModal={setModalOpen}
       />
+
+      <AchieversSection />
 
       <FacilitiesSection />
 
