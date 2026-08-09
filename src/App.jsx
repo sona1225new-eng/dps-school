@@ -250,7 +250,11 @@ function App() {
 
       <StatsSection />
 
-      <ExcellenceSection />
+      <NewsNoticesSection
+        notices={notices}
+        news={news}
+        openModal={setModalOpen}
+      />
 
       <FacilitiesSection />
 
@@ -260,11 +264,7 @@ function App() {
 
       <FutureSection />
 
-      <NewsNoticesSection
-        notices={notices}
-        news={news}
-        openModal={setModalOpen}
-      />
+      <ExcellenceSection />
 
       <CtaSection />
 
