@@ -109,109 +109,137 @@ function App() {
     <div className="min-h-screen bg-black text-white">
 
       {/* ================= NAVBAR ================= */}
-      <nav
-        id="main-nav"
-        className={`fixed top-0 z-50 w-full transition-colors duration-300 py-base px-margin-mobile md:px-margin-desktop flex justify-between items-center ${
-          isNavScrolled ? 'nav-scrolled' : 'bg-transparent'
-        }`}
-      >
-        {/* School Name */}
-        <div className="text-white font-bold text-lg">
-          Darjeeling Public School
-        </div>
+    {/* ================= NAVBAR ================= */}
+<nav
+  id="main-nav"
+  className={`fixed top-0 z-50 w-full transition-colors duration-300 py-base px-margin-mobile md:px-margin-desktop flex justify-between items-center ${
+    isNavScrolled ? 'nav-scrolled' : 'bg-transparent'
+  }`}
+>
+  {/* School Name */}
+  <div className="text-white font-bold text-lg">
+    Darjeeling Public School
+  </div>
 
-        {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center space-x-gutter">
+  {/* ================= DESKTOP NAVIGATION ================= */}
+  <div className="hidden md:flex items-center space-x-gutter">
 
-          {[
-            'Home',
-            'About',
-            'Academics',
-            'Facilities',
-            'Gallery',
-            'Contact',
-          ].map((item) => (
-            <a
-              key={item}
-              href="#"
-              className="text-white hover:text-orange-400 transition-colors text-label-lg font-label-lg"
-            >
-              {item}
-            </a>
-          ))}
+    <a
+      href="#"
+      className="text-white hover:text-orange-400 transition-colors text-label-lg font-label-lg"
+    >
+      Home
+    </a>
 
-          {/* DESKTOP NOTICES */}
-          <button
-            type="button"
-            onClick={() => setModalOpen('noticeModal')}
-            className="text-white hover:text-orange-400 transition-colors text-label-lg font-label-lg"
-          >
-            Notices
-          </button>
-        </div>
+    <a
+      href="#"
+      className="text-white hover:text-orange-400 transition-colors text-label-lg font-label-lg"
+    >
+      About
+    </a>
 
-        {/* Right Side */}
-        <div className="flex items-center gap-4">
+    <a
+      href="#"
+      className="text-white hover:text-orange-400 transition-colors text-label-lg font-label-lg"
+    >
+      Academics
+    </a>
 
-          {/* Admission */}
-          <button className="hidden md:block bg-primary-container text-white px-6 py-2 rounded font-label-lg text-label-lg hover:bg-primary transition-all">
-            Admission Open
-          </button>
+    <a
+      href="#"
+      className="text-white hover:text-orange-400 transition-colors text-label-lg font-label-lg"
+    >
+      Facilities
+    </a>
 
-          {/* Mobile Menu Button */}
-          <button
-            type="button"
-            onClick={() =>
-              setIsMobileMenuOpen((value) => !value)
-            }
-            className="md:hidden text-white"
-          >
-            <span className="material-symbols-outlined">
-              menu
-            </span>
-          </button>
-        </div>
-      </nav>
+    <a
+      href="#"
+      className="text-white hover:text-orange-400 transition-colors text-label-lg font-label-lg"
+    >
+      Gallery
+    </a>
+
+    <a
+      href="#"
+      className="text-white hover:text-orange-400 transition-colors text-label-lg font-label-lg"
+    >
+      Contact
+    </a>
+
+    {/* DESKTOP NOTICES */}
+    <button
+      type="button"
+      onClick={() => setModalOpen('noticeModal')}
+      className="text-white hover:text-orange-400 transition-colors text-label-lg font-label-lg"
+    >
+      Notices
+    </button>
+
+  </div>
+
+  {/* ================= RIGHT SIDE ================= */}
+  <div className="flex items-center gap-4">
+
+    {/* MOBILE NOTICES - ALWAYS VISIBLE */}
+    <button
+      type="button"
+      onClick={() => setModalOpen('noticeModal')}
+      className="md:hidden text-white text-sm font-semibold hover:text-orange-400 transition-colors"
+    >
+      Notices
+    </button>
+
+    {/* Admission Button */}
+    <button
+      className="hidden md:block bg-primary-container text-white px-6 py-2 rounded font-label-lg text-label-lg hover:bg-primary transition-all"
+    >
+      Admission Open
+    </button>
+
+    {/* Mobile Menu Button */}
+    <button
+      type="button"
+      onClick={() =>
+        setIsMobileMenuOpen((value) => !value)
+      }
+      className="md:hidden text-white"
+    >
+      <span className="material-symbols-outlined">
+        menu
+      </span>
+    </button>
+
+  </div>
+</nav>
 
       {/* ================= MOBILE MENU ================= */}
-      {isMobileMenuOpen && (
-        <div className="md:hidden fixed top-16 left-0 right-0 z-40 bg-black/95 border-t border-orange-500/30 p-5 shadow-xl">
+{isMobileMenuOpen && (
+  <div className="md:hidden fixed top-16 left-0 right-0 z-40 bg-black/95 border-t border-orange-500/30 p-5 shadow-xl">
 
-          <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-4">
 
-            {[
-              'Home',
-              'About',
-              'Academics',
-              'Facilities',
-              'Gallery',
-              'Contact',
-            ].map((item) => (
-              <a
-                key={item}
-                href="#"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="text-white text-label-lg font-label-lg hover:text-orange-400 transition-colors"
-              >
-                {item}
-              </a>
-            ))}
+      {[
+        'Home',
+        'About',
+        'Academics',
+        'Facilities',
+        'Gallery',
+        'Contact',
+      ].map((item) => (
+        <a
+          key={item}
+          href="#"
+          onClick={() => setIsMobileMenuOpen(false)}
+          className="text-white text-label-lg font-label-lg hover:text-orange-400 transition-colors"
+        >
+          {item}
+        </a>
+      ))}
 
-            {/* MOBILE NOTICES */}
-            <button
-              type="button"
-              onClick={() => {
-                setModalOpen('noticeModal');
-                setIsMobileMenuOpen(false);
-              }}
-              className="text-left text-white text-label-lg font-label-lg hover:text-orange-400 transition-colors"
-            >
-              Notices
-            </button>
+    </div>
 
-          </div>
-        </div>
-      )}
+  </div>
+)}
 
       {/* ================= PAGE SECTIONS ================= */}
 
