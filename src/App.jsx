@@ -144,7 +144,7 @@ function App() {
     </a>
 
     <a
-      href="#"
+      href="/academics.html"
       className="text-white hover:text-orange-400 transition-colors text-label-lg font-label-lg"
     >
       Academics
@@ -195,11 +195,12 @@ function App() {
     </button>
 
     {/* Admission Button */}
-    <button
-      className="hidden md:block bg-primary-container text-white px-6 py-2 rounded font-label-lg text-label-lg hover:bg-primary transition-all"
+    <a
+      href="/admission.html"
+      className="hidden md:inline-flex items-center justify-center bg-primary-container text-white px-6 py-2 rounded font-label-lg text-label-lg hover:bg-primary transition-all"
     >
       Admission Open
-    </button>
+    </a>
 
     {/* Mobile Menu Button */}
     <button
@@ -233,12 +234,14 @@ function App() {
       ].map((item) => (
         <a
           key={item}
-          href="#"
+          href={item === 'About' ? '#' : item === 'Academics' ? '/academics.html' : '#'}
           onClick={(event) => {
-            event.preventDefault();
-            setIsMobileMenuOpen(false);
             if (item === 'About') {
+              event.preventDefault();
+              setIsMobileMenuOpen(false);
               setModalOpen('aboutModal');
+            } else {
+              setIsMobileMenuOpen(false);
             }
           }}
           className="text-white text-label-lg font-label-lg hover:text-orange-400 transition-colors"
