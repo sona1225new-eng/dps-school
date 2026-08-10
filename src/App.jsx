@@ -134,6 +134,10 @@ function App() {
 
     <a
       href="#"
+      onClick={(event) => {
+        event.preventDefault();
+        setModalOpen('aboutModal');
+      }}
       className="text-white hover:text-orange-400 transition-colors text-label-lg font-label-lg"
     >
       About
@@ -230,7 +234,13 @@ function App() {
         <a
           key={item}
           href="#"
-          onClick={() => setIsMobileMenuOpen(false)}
+          onClick={(event) => {
+            event.preventDefault();
+            setIsMobileMenuOpen(false);
+            if (item === 'About') {
+              setModalOpen('aboutModal');
+            }
+          }}
           className="text-white text-label-lg font-label-lg hover:text-orange-400 transition-colors"
         >
           {item}
@@ -322,6 +332,21 @@ function App() {
             </div>
           )}
 
+        </div>
+      </Modal>
+
+      {/* ================= ABOUT MODAL ================= */}
+
+      <Modal
+        id="aboutModal"
+        title="Our Values at DJPS"
+        isOpen={modalOpen === 'aboutModal'}
+        onClose={() => setModalOpen('')}
+      >
+        <div className="space-y-5 rounded-3xl border border-orange-200/40 bg-white px-6 py-6 text-black shadow-sm">
+          <p className="text-sm leading-relaxed">
+            “<span className="font-semibold text-orange-500">DARJEELING PUBLIC SCHOOL</span> – a name that needs no introduction in the field of <span className="font-semibold text-orange-500">quality education</span>, has taken a <span className="font-semibold text-orange-500">giant leap towards excellence</span> even in the remotest parts of the country. It is a collective effort of a few visionaries to offer <span className="font-semibold text-orange-500">better education facilities</span> where development needs a boost. <span className="font-semibold text-orange-500">Quality education goes beyond theoretical knowledge</span>, with emphasis on <span className="font-semibold text-orange-500">values and skills</span> that help young minds evolve into <span className="font-semibold text-orange-500">better individuals</span>.”
+          </p>
         </div>
       </Modal>
 
