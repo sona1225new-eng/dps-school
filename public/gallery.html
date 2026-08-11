@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>School Gallery - Darjeeling Public School</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;family=Playfair+Display:wght@600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "inverse-surface": "#2f3131",
+                      "error-container": "#ffdad6",
+                      "error": "#ba1a1a",
+                      "surface-dim": "#dadada",
+                      "tertiary-fixed-dim": "#c8c6c6",
+                      "on-primary-fixed": "#370e00",
+                      "surface-container-lowest": "#ffffff",
+                      "outline": "#8f7065",
+                      "on-surface": "#1a1c1c",
+                      "secondary-fixed-dim": "#c6c6c6",
+                      "on-primary": "#ffffff",
+                      "primary": "#a63b00",
+                      "on-tertiary-container": "#2c2c2c",
+                      "tertiary-container": "#959393",
+                      "primary-container": "#ff5f00",
+                      "surface-container-high": "#e8e8e8",
+                      "on-secondary": "#ffffff",
+                      "on-background": "#1a1c1c",
+                      "on-error-container": "#93000a",
+                      "on-secondary-container": "#646464",
+                      "primary-fixed-dim": "#ffb599",
+                      "on-secondary-fixed": "#1b1b1b",
+                      "surface-bright": "#f9f9f9",
+                      "tertiary": "#5f5e5e",
+                      "secondary": "#5e5e5e",
+                      "surface-tint": "#a63b00",
+                      "primary-fixed": "#ffdbce",
+                      "surface-container": "#eeeeee",
+                      "on-tertiary-fixed": "#1b1c1c",
+                      "inverse-on-surface": "#f1f1f1",
+                      "secondary-fixed": "#e2e2e2",
+                      "background": "#f9f9f9",
+                      "surface-variant": "#e2e2e2",
+                      "tertiary-fixed": "#e4e2e1",
+                      "on-secondary-fixed-variant": "#474747",
+                      "on-tertiary": "#ffffff",
+                      "on-tertiary-fixed-variant": "#474747",
+                      "outline-variant": "#e4bfb1",
+                      "inverse-primary": "#ffb599",
+                      "on-primary-container": "#531a00",
+                      "on-surface-variant": "#5b4137",
+                      "surface-container-highest": "#e2e2e2",
+                      "surface": "#f9f9f9",
+                      "on-primary-fixed-variant": "#7f2b00",
+                      "secondary-container": "#e2e2e2",
+                      "surface-container-low": "#f3f3f3",
+                      "on-error": "#ffffff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "gutter": "24px",
+                      "base": "8px",
+                      "md": "24px",
+                      "margin-mobile": "16px",
+                      "margin-desktop": "64px",
+                      "lg": "48px",
+                      "sm": "12px",
+                      "xs": "4px",
+                      "xl": "80px"
+              },
+              "fontFamily": {
+                      "display-lg": [
+                              "Playfair Display"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "display-lg-mobile": [
+                              "Playfair Display"
+                      ],
+                      "label-bold": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Playfair Display"
+                      ],
+                      "label-sm": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Playfair Display"
+                      ]
+              },
+              "fontSize": {
+                      "display-lg": [
+                              "64px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg-mobile": [
+                              "40px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-bold": [
+                              "14px",
+                              {
+                                      "lineHeight": "1",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-lg": [
+                              "40px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "1",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-surface');
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        /* Custom Gallery Styles */
+        .gallery-item {
+            transition: all 0.3s ease;
+        }
+        .gallery-item:hover {
+            transform: translateY(-4px);
+            border-color: theme('colors.primary-container');
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+        .gallery-item.hidden {
+            display: none;
+        }
+        .filter-btn.active {
+            background-color: theme('colors.on-surface');
+            color: theme('colors.surface-container-lowest');
+            border-color: theme('colors.on-surface');
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col font-body-md text-body-md selection:bg-primary-container selection:text-white">
+<!-- TopNavBar -->
+<nav class="bg-surface dark:bg-surface-container font-body-md text-body-md docked full-width top-0 sticky z-50 border-b border-outline-variant dark:border-outline transition-colors duration-300">
+<div class="flex justify-between items-center max-w-7xl mx-auto px-margin-desktop h-20">
+<!-- Brand Logo -->
+<a class="font-display-lg text-headline-md font-bold text-on-surface dark:text-inverse-on-surface tracking-tight" href="#">
+                Darjeeling Public School
+            </a>
+<!-- Navigation Links -->
+<div class="hidden md:flex items-center space-x-md">
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors duration-200" href="#">Academics</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors duration-200" href="#">Campus</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors duration-200" href="#">Admissions</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors duration-200" href="#">Student Life</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors duration-200" href="#">About</a>
+</div>
+<!-- Trailing Action -->
+<a class="hidden md:inline-flex items-center justify-center px-6 py-3 bg-primary-container text-on-primary font-label-bold text-label-bold rounded hover:opacity-90 transition-opacity" href="#">
+                Apply Now
+            </a>
+<!-- Mobile Menu Toggle (Simplified) -->
+<button class="md:hidden text-on-surface p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow">
+<!-- Hero Section -->
+<section class="bg-surface-container-lowest py-xl border-b border-outline-variant">
+<div class="max-w-7xl mx-auto px-margin-desktop text-center">
+<div class="inline-flex items-center space-x-2 text-label-sm font-label-sm text-surface-variant mb-6 uppercase tracking-wider">
+<a class="hover:text-primary transition-colors" href="#">Home</a>
+<span class="w-1.5 h-1.5 bg-primary-container rounded-sm"></span>
+<span class="text-on-surface">Gallery</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-on-surface mb-6 relative inline-block">
+                    School Gallery
+                    <div class="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-primary-container"></div>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mt-8">
+                    Explore the vibrant life, stunning campus, and momentous occasions that define the Darjeeling Public School experience.
+                </p>
+</div>
+</section>
+<!-- Gallery Section -->
+<section class="py-xl bg-background">
+<div class="max-w-7xl mx-auto px-margin-desktop">
+<!-- Filters -->
+<div class="flex flex-wrap justify-center gap-sm mb-lg" id="gallery-filters">
+<button class="filter-btn active px-6 py-2 border border-outline-variant text-on-surface font-label-bold text-label-bold rounded hover:border-primary-container hover:text-primary-container transition-all" data-filter="all">All</button>
+<button class="filter-btn px-6 py-2 border border-outline-variant text-on-surface font-label-bold text-label-bold rounded hover:border-primary-container hover:text-primary-container transition-all" data-filter="campus">Campus</button>
+<button class="filter-btn px-6 py-2 border border-outline-variant text-on-surface font-label-bold text-label-bold rounded hover:border-primary-container hover:text-primary-container transition-all" data-filter="events">Events</button>
+<button class="filter-btn px-6 py-2 border border-outline-variant text-on-surface font-label-bold text-label-bold rounded hover:border-primary-container hover:text-primary-container transition-all" data-filter="activities">Activities</button>
+<button class="filter-btn px-6 py-2 border border-outline-variant text-on-surface font-label-bold text-label-bold rounded hover:border-primary-container hover:text-primary-container transition-all" data-filter="achievements">Achievements</button>
+</div>
+<!-- Bento Grid Photo Gallery -->
+<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-gutter" id="gallery-grid">
+<!-- Item 1 (Large) -->
+<div class="gallery-item md:col-span-2 md:row-span-2 relative group overflow-hidden bg-surface-container-lowest border border-outline-variant rounded cursor-pointer" data-category="campus" onclick="openLightbox('https://lh3.googleusercontent.com/aida/AP1WRLt3hhstJMDdFJfVM6zQWkF_DzEQq0kWqd5idNkm131SooNsYPHIQMmSYu_N9Lh0t_E_0UWgTaeHFhyMowVH0vFNyAhcOD-dWFgy14I1QHAEJpA-cgQth_TWnJLdR9N4OlBIo7mMbPshUkv2_Sr-ZCOzMcx2VdPIrnzJL_ZxUajDu2HFJqudEGtlmNkFzQZrmVpsUQmqplCCx3jtDuyo9aqXTh5jNsELuZNqQbxAx3U75t2yKlRcj9HRB1mL', 'Historic main building facade bathed in warm morning sunlight, showcasing classic academic architecture.')">
+<div class="aspect-w-16 aspect-h-12 w-full h-full">
+<img alt="Main Building" class="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105" src="https://djpsmadhepura.com/wp-content/uploads/2021/04/IMG20200108104451-scaled.jpg"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+<div class="text-white translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+<span class="bg-primary-container text-white text-xs font-bold px-2 py-1 uppercase tracking-wider mb-2 inline-block">Campus</span>
+<h3 class="font-headline-md text-[24px] leading-tight">Historic Main Building</h3>
+</div>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="gallery-item relative group overflow-hidden bg-surface-container-lowest border border-outline-variant rounded cursor-pointer" data-category="events" onclick="openLightbox('placeholder', 'A beautifully lit auditorium filled with students in formal attire during the annual convocation ceremony. Professional lighting and elegant stage design.')">
+<div class="aspect-w-1 aspect-h-1 w-full">
+<div class="bg-cover bg-center w-full h-64 transition-transform duration-700 group-hover:scale-105" data-alt="A beautifully lit auditorium filled with students in formal attire during the annual convocation ceremony. Professional lighting and elegant stage design. The mood is formal and prestigious, bathed in warm stage lights against dark surroundings." style="background-image: url('https://djpsmadhepura.com/wp-content/uploads/2021/04/IMG20201114195531-scaled.jpg')"></div>
+</div>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-4xl">zoom_in</span>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="gallery-item relative group overflow-hidden bg-surface-container-lowest border border-outline-variant rounded cursor-pointer" data-category="activities" onclick="openLightbox('placeholder', 'Students engaged in a spirited debate competition in a modern classroom setting. Bright natural light, focused expressions, contemporary academic environment.')">
+<div class="aspect-w-1 aspect-h-1 w-full">
+<img class="object-cover w-full h-64 transition-transform duration-700 group-hover:scale-105" data-alt="Students engaged in a spirited debate competition in a modern classroom setting. Bright natural light, focused expressions, contemporary academic environment. Clean lines, white walls, and sharp professional attire." src="https://djpsmadhepura.com/wp-content/uploads/2021/04/IMG20200225141845-scaled.jpg"/>
+</div>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-4xl">zoom_in</span>
+</div>
+</div>
+<!-- Item 4 (Tall) -->
+<div class="gallery-item md:row-span-2 relative group overflow-hidden bg-surface-container-lowest border border-outline-variant rounded cursor-pointer" data-category="achievements" onclick="openLightbox('placeholder', 'A close-up of a student proudly holding a shining academic trophy. Shallow depth of field, bright institutional lighting, a moment of triumph.')">
+<div class="aspect-w-3 aspect-h-4 w-full h-full">
+<div class="bg-cover bg-center w-full h-full min-h-[400px] transition-transform duration-700 group-hover:scale-105" data-alt="A close-up of a student proudly holding a shining academic trophy. Shallow depth of field, bright institutional lighting, a moment of triumph. High contrast, clean aesthetic, focus on achievement." style="background-image: url('https://djpsmadhepura.com/wp-content/uploads/2022/12/WhatsApp-Image-2022-12-15-at-2.26.33-PM.jpeg')"></div>
+</div>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-4xl">zoom_in</span>
+</div>
+</div>
+<!-- Item 5 -->
+<div class="gallery-item relative group overflow-hidden bg-surface-container-lowest border border-outline-variant rounded cursor-pointer" data-category="campus" onclick="openLightbox('placeholder', 'An aerial view of the lush green central courtyard surrounded by brick academic buildings. Sunny day, long shadows, vibrant greenery.')">
+<div class="aspect-w-1 aspect-h-1 w-full">
+<img class="object-cover w-full h-64 transition-transform duration-700 group-hover:scale-105" data-alt="An aerial view of the lush green central courtyard surrounded by brick academic buildings. Sunny day, long shadows, vibrant greenery. Classic academic architecture contrasting with vibrant nature." src="https://djpsmadhepura.com/wp-content/uploads/2022/12/WhatsApp-Image-2022-12-15-at-2.22.35-PM-2.jpeg"/>
+</div>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-4xl">zoom_in</span>
+</div>
+</div>
+<!-- Item 6 -->
+<div class="gallery-item relative group overflow-hidden bg-surface-container-lowest border border-outline-variant rounded cursor-pointer" data-category="activities" onclick="openLightbox('placeholder', 'A high-energy moment during a varsity basketball game. Motion blur on players, sharp focus on the ball and net, brightly lit gymnasium.')">
+<div class="aspect-w-1 aspect-h-1 w-full">
+<div class="bg-cover bg-center w-full h-64 transition-transform duration-700 group-hover:scale-105" data-alt="A high-energy moment during a varsity basketball game. Motion blur on players, sharp focus on the ball and net, brightly lit gymnasium. Dynamic composition emphasizing movement and teamwork." style="background-image: url('https://djpsmadhepura.com/wp-content/uploads/2022/12/WhatsApp-Image-2022-12-15-at-2.25.32-PM.jpeg')"></div>
+</div>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-4xl">zoom_in</span>
+</div>
+</div>
+</div>
+<div class="mt-lg text-center">
+<button class="inline-flex items-center justify-center px-8 py-4 border-2 border-on-surface text-on-surface font-label-bold text-label-bold rounded hover:bg-on-surface hover:text-surface-container-lowest transition-colors">
+                        Load More Images
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-inverse-surface dark:bg-surface-container-lowest text-primary-fixed dark:text-primary font-label-sm text-label-sm full-width border-t-4 border-primary">
+<div class="max-w-7xl mx-auto px-margin-desktop py-xl flex flex-col md:flex-row justify-between items-start md:items-center gap-lg">
+<div class="flex-shrink-0">
+<span class="font-display-lg text-headline-md font-bold text-on-primary block mb-2">Darjeeling Public School</span>
+<p class="text-surface-variant opacity-80 mt-2">© 2024 Darjeeling Public School. Excellence in Academic Vanguard.</p>
+</div>
+<div class="flex flex-wrap gap-md md:justify-end w-full">
+<a class="text-surface-variant opacity-80 hover:opacity-100 hover:text-primary-fixed transition-opacity" href="#">Privacy Policy</a>
+<a class="text-surface-variant opacity-80 hover:opacity-100 hover:text-primary-fixed transition-opacity" href="#">Terms of Service</a>
+<a class="text-surface-variant opacity-80 hover:opacity-100 hover:text-primary-fixed transition-opacity" href="#">Campus Map</a>
+<a class="text-surface-variant opacity-80 hover:opacity-100 hover:text-primary-fixed transition-opacity" href="#">Contact Registry</a>
+<a class="text-surface-variant opacity-80 hover:opacity-100 hover:text-primary-fixed transition-opacity" href="#">Alumni Network</a>
+</div>
+</div>
+</footer>
+<!-- Lightbox Overlay -->
+<div class="fixed inset-0 z-[100] bg-black/90 backdrop-blur-sm hidden flex items-center justify-center opacity-0 transition-opacity duration-300" id="lightbox">
+<button class="absolute top-6 right-6 text-white hover:text-primary-container transition-colors z-[101]" id="lightbox-close">
+<span class="material-symbols-outlined text-4xl">close</span>
+</button>
+<div class="max-w-5xl w-full p-4 md:p-8 flex flex-col items-center">
+<img alt="Gallery Image" class="max-h-[80vh] object-contain shadow-2xl border border-white/10" id="lightbox-img" src=""/>
+<p class="text-white font-body-lg text-center mt-6 max-w-2xl text-opacity-80" id="lightbox-caption"></p>
+</div>
+</div>
+<!-- Interactive Scripts -->
+<script>
+        // Filtering Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Update active state
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    const filterValue = btn.getAttribute('data-filter');
+
+                    // Filter items
+                    galleryItems.forEach(item => {
+                        if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                            item.classList.remove('hidden');
+                            // Small animation trick
+                            item.style.opacity = '0';
+                            setTimeout(() => item.style.opacity = '1', 50);
+                        } else {
+                            item.classList.add('hidden');
+                        }
+                    });
+                });
+            });
+        });
+
+        // Lightbox Logic
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxCaption = document.getElementById('lightbox-caption');
+        const closeBtn = document.getElementById('lightbox-close');
+
+        window.openLightbox = function(imageSrc, caption) {
+            lightboxImg.src = imageSrc;
+            lightboxCaption.textContent = caption;
+            
+            lightbox.classList.remove('hidden');
+            // Trigger reflow for transition
+            void lightbox.offsetWidth; 
+            lightbox.classList.remove('opacity-0');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+        };
+
+        const closeLightbox = () => {
+            lightbox.classList.add('opacity-0');
+            setTimeout(() => {
+                lightbox.classList.add('hidden');
+                lightboxImg.src = '';
+                document.body.style.overflow = '';
+            }, 300); // match duration
+        };
+
+        closeBtn.addEventListener('click', closeLightbox);
+        
+        // Close on background click
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) closeLightbox();
+        });
+
+        // Close on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !lightbox.classList.contains('hidden')) {
+                closeLightbox();
+            }
+        });
+    </script>
+</body></html>

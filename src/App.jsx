@@ -126,7 +126,7 @@ function App() {
   <div className="hidden md:flex items-center space-x-gutter">
 
     <a
-      href="#"
+      href="/"
       className="text-white hover:text-orange-400 transition-colors text-label-lg font-label-lg"
     >
       Home
@@ -136,7 +136,7 @@ function App() {
       href="/about.html"
       className="text-white hover:text-orange-400 transition-colors text-label-lg font-label-lg"
     >
-      About us
+      About Us
     </a>
 
     <a
@@ -146,30 +146,33 @@ function App() {
       Academics
     </a>
 
-    
+    <a
+      href="/facilities.html"
+      className="text-white hover:text-orange-400 transition-colors text-label-lg font-label-lg"
+    >
+      Facilities
+    </a>
 
     <a
-      href="#"
+      href="/gallery.html"
       className="text-white hover:text-orange-400 transition-colors text-label-lg font-label-lg"
     >
       Gallery
     </a>
 
     <a
-      href="#"
+      href="/contact.html"
       className="text-white hover:text-orange-400 transition-colors text-label-lg font-label-lg"
     >
       Contact
     </a>
 
-    {/* DESKTOP NOTICES */}
-    <button
-      type="button"
-      onClick={() => setModalOpen('noticeModal')}
+    <a
+      href="/notices.html"
       className="text-white hover:text-orange-400 transition-colors text-label-lg font-label-lg"
     >
       Notices
-    </button>
+    </a>
 
   </div>
 
@@ -214,31 +217,46 @@ function App() {
   <div className="md:hidden fixed top-16 left-0 right-0 z-40 bg-black/95 border-t border-orange-500/30 p-5 shadow-xl">
 
     <div className="flex flex-col gap-4">
-
       {[
-        'Home',
-        'About',
-        'Academics',
-        'Facilities',
-        'Gallery',
-        'Contact',
-      ].map((item) => (
-        <a
-          key={item}
-          href={item === 'About' ? '/about.html' : item === 'Academics' ? '/academics.html' : '#'}
-          onClick={() => setIsMobileMenuOpen(false)}
-          className="text-white text-label-lg font-label-lg hover:text-orange-400 transition-colors"
-        >
-          {item}
-        </a>
-      ))}
+          'Home',
+          'About Us',
+          'Academics',
+          'Facilities',
+          'Gallery',
+          'Contact',
+          'Notices',
+          'Admission Open',
+        ].map((item) => (
+          <a
+            key={item}
+            href={
+              item === 'Home'
+                ? '/'
+                : item === 'About Us'
+                ? '/about.html'
+                : item === 'Academics'
+                ? '/academics.html'
+                : item === 'Facilities'
+                ? '/facilities.html'
+                : item === 'Gallery'
+                ? '/gallery.html'
+                : item === 'Contact'
+                ? '/contact.html'
+                : item === 'Notices'
+                ? '/notices.html'
+                : item === 'Admission Open'
+                ? '/admission.html'
+                : '#'
+            }
+            className="text-white hover:text-orange-400 transition-colors text-label-lg font-label-lg"
+          >
+            {item}
+          </a>
+        ))}
 
+      </div>
     </div>
-
-  </div>
-)}
-
-      {/* ================= PAGE SECTIONS ================= */}
+  )}
 
       <HeroSection
         heroSlides={heroSlides}
