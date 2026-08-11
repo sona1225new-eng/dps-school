@@ -136,7 +136,7 @@ function App() {
       href="/about.html"
       className="text-white hover:text-orange-400 transition-colors text-label-lg font-label-lg"
     >
-      About
+      About us
     </a>
 
     <a
@@ -146,12 +146,7 @@ function App() {
       Academics
     </a>
 
-    <a
-      href="#"
-      className="text-white hover:text-orange-400 transition-colors text-label-lg font-label-lg"
-    >
-      Facilities
-    </a>
+    
 
     <a
       href="#"
