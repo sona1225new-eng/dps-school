@@ -21,9 +21,12 @@ const HeroSection = ({ heroSlides, currentSlide }) => {
           Welcome to Darjeeling Public School, Madhepura
         </h1>
         <div className="flex flex-col sm:flex-row gap-4">
-          <button className="bg-primary-container text-white px-8 py-3 rounded-lg font-label-lg text-label-lg hover:bg-primary hover:shadow-lg transition-all transform hover:-translate-y-1">
+          <a
+            href="/admission.html"
+            className="bg-primary-container text-white px-8 py-3 rounded-lg font-label-lg text-label-lg hover:bg-primary hover:shadow-lg transition-all transform hover:-translate-y-1"
+          >
             Admission Open
-          </button>
+          </a>
           <button className="bg-transparent border border-white text-white px-8 py-3 rounded-lg font-label-lg text-label-lg hover:bg-white/10 transition-all transform hover:-translate-y-1">
             Explore Campus
           </button>
