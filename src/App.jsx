@@ -168,7 +168,11 @@ function App() {
     </a>
 
     <a
-      href="/notices.html"
+      href="#"
+      onClick={(event) => {
+        event.preventDefault();
+        setModalOpen('noticeModal');
+      }}
       className="text-white hover:text-orange-400 transition-colors text-label-lg font-label-lg"
     >
       Notices
