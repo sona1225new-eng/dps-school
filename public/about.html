@@ -3,28 +3,159 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About - Darjeeling Public School</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+    <title>About Us - Darjeeling Public School</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              'primary': '#964900',
+              'primary-container': '#f57c00',
+              'primary-fixed': '#ffdcc6',
+              'primary-fixed-dim': '#ffb786',
+              'inverse-surface': '#303031',
+              'inverse-on-surface': '#f2f0f0',
+              'tertiary-fixed': '#e2e2e2',
+              'tertiary-fixed-dim': '#c6c6c7',
+              'outline': '#8b7263',
+              'outline-variant': '#dec1af',
+              'surface-container-low': '#f5f3f3',
+              'surface-container-lowest': '#ffffff',
+              'on-surface': '#1b1c1c',
+              'on-surface-variant': '#574235',
+              'background': '#fbf9f9',
+            },
+            spacing: {
+              'base': '8px',
+              'gutter': '24px',
+              'margin-mobile': '16px',
+              'margin-desktop': '64px',
+              'xl': '80px',
+            },
+            fontFamily: {
+              sans: ['Outfit', 'sans-serif'],
+              'label-lg': ['Outfit', 'sans-serif'],
+              'body-md': ['Outfit', 'sans-serif'],
+              'headline-md': ['Outfit', 'sans-serif'],
+              'display-lg': ['Outfit', 'sans-serif'],
+              'display': ['Playfair Display', 'serif']
+            }
+          }
+        }
+      }
+    </script>
     <style>
-      body { font-family: 'Inter', sans-serif; }
+      body { font-family: 'Outfit', sans-serif; }
       .font-display { font-family: 'Playfair Display', serif; }
+      .nav-scrolled {
+        background-color: #111111 !important;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+      }
+      .modal-overlay {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(4px);
+        align-items: center;
+        justify-content: center;
+      }
+      .modal-overlay.show {
+        display: flex;
+      }
     </style>
   </head>
-  <body class="bg-white text-black">
-    <nav class="w-full border-b border-gray-200 bg-white/95 backdrop-blur">
-      <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 lg:px-8">
-        <a href="/" class="font-display text-xl font-bold text-black">Darjeeling Public School</a>
-        <div class="flex items-center gap-6 text-sm font-semibold text-black">
-          <a href="/" class="hover:text-orange-500">Home</a>
-          <a href="/academics.html" class="hover:text-orange-500">Academics</a>
-          <a href="/admission.html" class="hover:text-orange-500">Admission</a>
-        </div>
+  <body class="bg-background text-on-background min-h-screen flex flex-col antialiased">
+    <!-- ================= NAVBAR ================= -->
+    <nav
+      id="main-nav"
+      class="fixed top-0 z-50 w-full transition-colors duration-300 py-base px-margin-mobile md:px-margin-desktop flex justify-between items-center bg-[#111111]/95 backdrop-blur"
+    >
+      <!-- School Logo & Name -->
+      <a href="/" class="flex items-center gap-3 group">
+        <img
+          src="/images/logo2.jpg"
+          alt="Darjeeling Public School Logo"
+          class="h-10 w-10 md:h-12 md:w-12 object-contain rounded-full bg-white shadow-sm shrink-0"
+        />
+        <span class="text-white font-bold text-base sm:text-lg tracking-wide group-hover:text-orange-400 transition-colors">
+          Darjeeling Public School
+        </span>
+      </a>
+
+      <!-- ================= DESKTOP NAVIGATION ================= -->
+      <div class="hidden md:flex items-center space-x-gutter">
+        <a href="/" class="text-white hover:text-orange-400 transition-colors text-label-lg font-label-lg">Home</a>
+        <a href="/about.html" class="text-orange-400 transition-colors text-label-lg font-label-lg font-bold">About Us</a>
+        <a href="/academics.html" class="text-white hover:text-orange-400 transition-colors text-label-lg font-label-lg">Academics</a>
+        <a href="/facilities.html" class="text-white hover:text-orange-400 transition-colors text-label-lg font-label-lg">Facilities</a>
+        <a href="/gallery.html" class="text-white hover:text-orange-400 transition-colors text-label-lg font-label-lg">Gallery</a>
+        <a href="/contact.html" class="text-white hover:text-orange-400 transition-colors text-label-lg font-label-lg">Contact</a>
+        <a href="#" onclick="openNoticeModal(event)" class="text-white hover:text-orange-400 transition-colors text-label-lg font-label-lg">Notices</a>
+      </div>
+
+      <!-- ================= RIGHT SIDE ================= -->
+      <div class="flex items-center gap-4">
+        <!-- MOBILE NOTICES - ALWAYS VISIBLE -->
+        <button
+          type="button"
+          onclick="openNoticeModal(event)"
+          class="md:hidden text-white text-sm font-semibold hover:text-orange-400 transition-colors"
+        >
+          Notices
+        </button>
+
+        <!-- Admission Button -->
+        <a
+          href="/admission.html"
+          class="hidden md:inline-flex items-center justify-center bg-primary-container text-white px-6 py-2 rounded font-label-lg text-label-lg hover:bg-primary transition-all shadow"
+        >
+          Admission Open
+        </a>
+
+        <!-- Mobile Menu Button -->
+        <button
+          type="button"
+          id="mobile-menu-btn"
+          class="md:hidden text-white p-1 focus:outline-none"
+          aria-label="Toggle Menu"
+        >
+          <span class="material-symbols-outlined">menu</span>
+        </button>
       </div>
     </nav>
 
-    <main class="mx-auto flex max-w-6xl flex-col gap-10 px-6 py-16 lg:px-8 lg:py-24">
-      <section class="rounded-3xl border border-orange-200 bg-white p-8 shadow-sm lg:p-12">
+    <!-- ================= MOBILE MENU ================= -->
+    <div
+      id="mobile-menu"
+      class="hidden md:hidden fixed top-16 left-0 right-0 z-40 bg-black/95 border-t border-orange-500/30 p-5 shadow-xl transition-all"
+    >
+      <div class="flex flex-col gap-4">
+        <a href="/" class="text-white hover:text-orange-400 transition-colors text-label-lg font-label-lg">Home</a>
+        <a href="/about.html" class="text-orange-400 transition-colors text-label-lg font-label-lg font-bold">About Us</a>
+        <a href="/academics.html" class="text-white hover:text-orange-400 transition-colors text-label-lg font-label-lg">Academics</a>
+        <a href="/facilities.html" class="text-white hover:text-orange-400 transition-colors text-label-lg font-label-lg">Facilities</a>
+        <a href="/gallery.html" class="text-white hover:text-orange-400 transition-colors text-label-lg font-label-lg">Gallery</a>
+        <a href="/contact.html" class="text-white hover:text-orange-400 transition-colors text-label-lg font-label-lg">Contact</a>
+        <a href="/notices.html" class="text-white hover:text-orange-400 transition-colors text-label-lg font-label-lg">Notices</a>
+        <a href="/admission.html" class="text-orange-400 hover:text-orange-300 transition-colors text-label-lg font-label-lg font-semibold">Admission Open</a>
+      </div>
+    </div>
+
+    <!-- Main Section (Original Content Preserved) -->
+    <main class="flex-grow pt-24 pb-16 mx-auto w-full max-w-6xl flex flex-col gap-10 px-margin-mobile md:px-8">
+      <section class="rounded-3xl border border-orange-200 bg-white p-8 shadow-sm lg:p-12 mt-4">
         <p class="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-orange-500">About Us</p>
         <h1 class="font-display text-4xl font-bold leading-tight text-black sm:text-5xl">
           Darjeeling Public School — a name that needs no introduction in the field of quality education.
@@ -42,5 +173,177 @@
         </div>
       </section>
     </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="bg-inverse-surface dark:bg-on-background text-primary-fixed dark:text-primary-fixed-dim font-body-md text-body-md full-width flat no shadows mt-auto">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-mobile md:px-margin-desktop py-xl max-w-7xl mx-auto">
+        <div>
+          <h3 class="font-headline-md text-2xl font-bold text-inverse-on-surface mb-6">DPS</h3>
+          <p class="mb-2 text-tertiary-fixed">Madhepura, Bihar - 852113</p>
+          <p class="mb-2 text-tertiary-fixed">+91 94725 33451</p>
+          <p class="text-tertiary-fixed">info@dpsmadhepura.edu.in</p>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <h4 class="font-label-lg text-sm font-semibold text-inverse-on-surface mb-4">School Info</h4>
+            <ul class="space-y-2">
+              <li>
+                <a class="text-tertiary-fixed hover:text-primary-fixed-dim transition-opacity hover:opacity-80" href="/about.html">
+                  About Us
+                </a>
+              </li>
+              <li>
+                <a class="text-tertiary-fixed hover:text-primary-fixed-dim transition-opacity hover:opacity-80" href="/academics.html">
+                  Academics
+                </a>
+              </li>
+              <li>
+                <a class="text-tertiary-fixed hover:text-primary-fixed-dim transition-opacity hover:opacity-80" href="/admission.html">
+                  Admissions
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-label-lg text-sm font-semibold text-inverse-on-surface mb-4">Quick Links</h4>
+            <ul class="space-y-2">
+              <li>
+                <button type="button" onclick="openNewsModal(event)" class="text-tertiary-fixed hover:text-primary-fixed-dim transition-opacity hover:opacity-80">
+                  News (2)
+                </button>
+              </li>
+              <li>
+                <button type="button" onclick="openNoticeModal(event)" class="text-tertiary-fixed hover:text-primary-fixed-dim transition-opacity hover:opacity-80">
+                  Notices (3)
+                </button>
+              </li>
+              <li>
+                <a class="text-tertiary-fixed hover:text-primary-fixed-dim transition-opacity hover:opacity-80" href="/contact.html">
+                  Contact
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="flex flex-col items-start md:items-end">
+          <select onchange="if(this.value) window.location.href=this.value" class="bg-transparent border border-outline text-inverse-on-surface rounded p-2 mb-6 w-full max-w-xs focus:border-primary focus:ring-0">
+            <option value="" class="bg-zinc-900 text-white">Important Links</option>
+            <option value="/academics.html" class="bg-zinc-900 text-white">CBSE Mandate</option>
+            <option value="/admission.html" class="bg-zinc-900 text-white">Student Portal</option>
+          </select>
+          <div class="flex gap-4">
+            <a class="w-10 h-10 rounded-full border border-outline flex items-center justify-center text-inverse-on-surface hover:bg-primary-container hover:border-primary-container transition-all" href="#">FB</a>
+            <a class="w-10 h-10 rounded-full border border-outline flex items-center justify-center text-inverse-on-surface hover:bg-primary-container hover:border-primary-container transition-all" href="#">IG</a>
+            <a class="w-10 h-10 rounded-full border border-outline flex items-center justify-center text-inverse-on-surface hover:bg-primary-container hover:border-primary-container transition-all" href="#">X</a>
+            <a class="w-10 h-10 rounded-full border border-outline flex items-center justify-center text-inverse-on-surface hover:bg-primary-container hover:border-primary-container transition-all" href="#">YT</a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-outline/30 px-margin-mobile md:px-margin-desktop py-6 flex flex-col md:flex-row justify-between items-center text-sm text-tertiary-fixed max-w-7xl mx-auto">
+        <p>© 2024 Darjeeling Public School. All rights reserved.</p>
+        <p className="mt-2 md:mt-0">CBSE AFFILIATION NO: XXXXXX</p>
+      </div>
+    </footer>
+
+    <!-- ================= NOTICE MODAL ================= -->
+    <div id="noticeModal" class="modal-overlay" onclick="handleModalOverlayClick(event, 'noticeModal')">
+      <div class="relative w-[90%] max-w-[600px] max-h-[85vh] overflow-y-auto rounded-2xl bg-zinc-950 p-6 text-white border border-orange-500/30 shadow-2xl">
+        <div class="flex items-center justify-between pb-4 border-b border-zinc-800">
+          <h3 class="text-xl font-bold text-white">School Notices & Updates</h3>
+          <button type="button" onclick="closeModal('noticeModal')" class="text-gray-400 hover:text-white text-2xl font-bold leading-none">&times;</button>
+        </div>
+        <div class="mt-5 space-y-4">
+          <div class="rounded-xl border border-orange-500/30 bg-zinc-900/90 p-5 transition-all hover:border-orange-500/60">
+            <p class="mb-2 text-xs font-bold uppercase tracking-wider text-orange-500">2024-03-10</p>
+            <h4 class="text-lg font-bold text-white">Term-II Exam routine</h4>
+            <p class="mt-2 text-sm leading-relaxed text-gray-300">Routine for Term-II exam 23-24</p>
+          </div>
+          <div class="rounded-xl border border-orange-500/30 bg-zinc-900/90 p-5 transition-all hover:border-orange-500/60">
+            <p class="mb-2 text-xs font-bold uppercase tracking-wider text-orange-500">2024-01-20</p>
+            <h4 class="text-lg font-bold text-white">Republic Day Invitation</h4>
+            <p class="mt-2 text-sm leading-relaxed text-gray-300">Invitation for Republic Day & Saraswati Puja</p>
+          </div>
+          <div class="rounded-xl border border-orange-500/30 bg-zinc-900/90 p-5 transition-all hover:border-orange-500/60">
+            <p class="mb-2 text-xs font-bold uppercase tracking-wider text-orange-500">2023-12-05</p>
+            <h4 class="text-lg font-bold text-white">Formative Assessment II</h4>
+            <p class="mt-2 text-sm leading-relaxed text-gray-300">Time Table for Formative Assessment II</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= NEWS MODAL ================= -->
+    <div id="newsModal" class="modal-overlay" onclick="handleModalOverlayClick(event, 'newsModal')">
+      <div class="relative w-[90%] max-w-[600px] max-h-[85vh] overflow-y-auto rounded-2xl bg-zinc-950 p-6 text-white border border-orange-500/30 shadow-2xl">
+        <div class="flex items-center justify-between pb-4 border-b border-zinc-800">
+          <h3 class="text-xl font-bold text-white">All News</h3>
+          <button type="button" onclick="closeModal('newsModal')" class="text-gray-400 hover:text-white text-2xl font-bold leading-none">&times;</button>
+        </div>
+        <div class="mt-5 space-y-4">
+          <div class="rounded-xl border border-orange-500/30 bg-zinc-900/90 p-5">
+            <p class="mb-2 text-xs font-bold text-orange-500">2024-02-15</p>
+            <h4 class="text-lg font-bold text-white">DJPS Pride - Ajay Kumar</h4>
+            <p class="mt-2 text-sm text-gray-300">IIT NDA Qualified 2025 Batch</p>
+          </div>
+          <div class="rounded-xl border border-orange-500/30 bg-zinc-900/90 p-5">
+            <p class="mb-2 text-xs font-bold text-orange-500">2024-01-10</p>
+            <h4 class="text-lg font-bold text-white">Alumni Success - Pooja Kumari</h4>
+            <p class="mt-2 text-sm text-gray-300">AIIMS Bhopal Batch 2019</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Interactive Scripts -->
+    <script>
+      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      if (mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener('click', () => {
+          mobileMenu.classList.toggle('hidden');
+        });
+      }
+
+      function openNoticeModal(e) {
+        if (e) e.preventDefault();
+        const modal = document.getElementById('noticeModal');
+        if (modal) modal.classList.add('show');
+      }
+
+      function openNewsModal(e) {
+        if (e) e.preventDefault();
+        const modal = document.getElementById('newsModal');
+        if (modal) modal.classList.add('show');
+      }
+
+      function closeModal(id) {
+        const modal = document.getElementById(id);
+        if (modal) modal.classList.remove('show');
+      }
+
+      function handleModalOverlayClick(e, id) {
+        if (e.target.id === id || e.target.classList.contains('modal-overlay')) {
+          closeModal(id);
+        }
+      }
+
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          closeModal('noticeModal');
+          closeModal('newsModal');
+        }
+      });
+
+      window.addEventListener('scroll', () => {
+        const nav = document.getElementById('main-nav');
+        if (nav) {
+          if (window.scrollY > 20) {
+            nav.classList.add('nav-scrolled');
+          } else {
+            nav.classList.remove('nav-scrolled');
+          }
+        }
+      });
+    </script>
   </body>
 </html>

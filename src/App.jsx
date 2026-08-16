@@ -117,10 +117,17 @@ function App() {
     isNavScrolled ? 'nav-scrolled' : 'bg-transparent'
   }`}
 >
-  {/* School Name */}
-  <div className="text-white font-bold text-lg">
-    Darjeeling Public School
-  </div>
+  {/* School Logo & Name */}
+  <a href="/" className="flex items-center gap-3 group">
+    <img
+      src="/images/logo2.jpg"
+      alt="Darjeeling Public School Logo"
+      className="h-10 w-10 md:h-12 md:w-12 object-contain rounded-full bg-white shadow-sm shrink-0"
+    />
+    <span className="text-white font-bold text-base sm:text-lg tracking-wide group-hover:text-orange-400 transition-colors">
+      Darjeeling Public School
+    </span>
+  </a>
 
   {/* ================= DESKTOP NAVIGATION ================= */}
   <div className="hidden md:flex items-center space-x-gutter">
@@ -197,7 +204,7 @@ function App() {
       href="/admission.html"
       className="hidden md:inline-flex items-center justify-center bg-primary-container text-white px-6 py-2 rounded font-label-lg text-label-lg hover:bg-primary transition-all"
     >
-      Admission Open
+      CBSE MANDATE
     </a>
 
     {/* Mobile Menu Button */}

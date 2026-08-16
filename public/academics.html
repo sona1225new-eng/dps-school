@@ -1,235 +1,425 @@
 <!DOCTYPE html>
-
-<html lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Academics &amp; Curriculum - Darjeeling Public School</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 1;
-        }
-        
-        .fade-in-up {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        
-        .fade-in-up.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .stagger-1 { transition-delay: 100ms; }
-        .stagger-2 { transition-delay: 200ms; }
-        .stagger-3 { transition-delay: 300ms; }
-    </style>
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    "colors": {
-                        "on-tertiary-fixed": "#1b1c1c",
-                        "inverse-surface": "#2f3131",
-                        "surface-container": "#eeeeee",
-                        "error-container": "#ffdad6",
-                        "tertiary-fixed-dim": "#c8c6c6",
-                        "tertiary": "#5f5e5e",
-                        "on-surface-variant": "#5b4137",
-                        "outline-variant": "#e4bfb1",
-                        "inverse-on-surface": "#f1f1f1",
-                        "surface-container-high": "#e8e8e8",
-                        "secondary-fixed-dim": "#c6c6c6",
-                        "background": "#f9f9f9",
-                        "on-secondary-fixed-variant": "#474747",
-                        "on-secondary-container": "#646464",
-                        "surface-tint": "#a63b00",
-                        "primary-fixed": "#ffdbce",
-                        "on-tertiary-fixed-variant": "#474747",
-                        "surface-container-highest": "#e2e2e2",
-                        "on-error-container": "#93000a",
-                        "on-background": "#1a1c1c",
-                        "tertiary-container": "#959393",
-                        "surface-variant": "#e2e2e2",
-                        "on-tertiary": "#ffffff",
-                        "on-primary-fixed-variant": "#7f2b00",
-                        "on-secondary": "#ffffff",
-                        "on-primary": "#ffffff",
-                        "on-tertiary-container": "#2c2c2c",
-                        "surface-container-lowest": "#ffffff",
-                        "primary-fixed-dim": "#ffb599",
-                        "surface": "#f9f9f9",
-                        "surface-container-low": "#f3f3f3",
-                        "on-secondary-fixed": "#1b1b1b",
-                        "primary": "#a63b00",
-                        "on-error": "#ffffff",
-                        "on-primary-fixed": "#370e00",
-                        "surface-bright": "#f9f9f9",
-                        "secondary-fixed": "#e2e2e2",
-                        "primary-container": "#ff5f00",
-                        "inverse-primary": "#ffb599",
-                        "on-surface": "#1a1c1c",
-                        "outline": "#8f7065",
-                        "surface-dim": "#dadada",
-                        "on-primary-container": "#531a00",
-                        "error": "#ba1a1a",
-                        "secondary-container": "#e2e2e2",
-                        "secondary": "#5e5e5e",
-                        "tertiary-fixed": "#e4e2e1"
-                    },
-                    "borderRadius": {
-                        "DEFAULT": "0.125rem",
-                        "lg": "0.25rem",
-                        "xl": "0.5rem",
-                        "full": "0.75rem"
-                    },
-                    "spacing": {
-                        "xl": "80px",
-                        "margin-mobile": "16px",
-                        "sm": "12px",
-                        "xs": "4px",
-                        "md": "24px",
-                        "margin-desktop": "64px",
-                        "lg": "48px",
-                        "base": "8px",
-                        "gutter": "24px"
-                    },
-                    "fontFamily": {
-                        "body-md": ["Inter"],
-                        "headline-lg": ["Playfair Display"],
-                        "display-lg": ["Playfair Display"],
-                        "headline-md": ["Playfair Display"],
-                        "body-lg": ["Inter"],
-                        "label-bold": ["Inter"],
-                        "label-sm": ["Inter"],
-                        "display-lg-mobile": ["Playfair Display"]
-                    },
-                    "fontSize": {
-                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
-                        "headline-lg": ["40px", { "lineHeight": "1.2", "fontWeight": "700" }],
-                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
-                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "600" }],
-                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
-                        "label-bold": ["14px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "700" }],
-                        "label-sm": ["12px", { "lineHeight": "1", "fontWeight": "500" }],
-                        "display-lg-mobile": ["40px", { "lineHeight": "1.2", "fontWeight": "700" }]
-                    }
-                },
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Academics & Curriculum - Darjeeling Public School</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#964900",
+              "primary-container": "#f57c00",
+              "primary-fixed": "#ffdcc6",
+              "primary-fixed-dim": "#ffb786",
+              "inverse-surface": "#303031",
+              "inverse-on-surface": "#f2f0f0",
+              "tertiary-fixed": "#e2e2e2",
+              "tertiary-fixed-dim": "#c6c6c7",
+              "outline": "#8b7263",
+              "outline-variant": "#dec1af",
+              "surface-container-low": "#f5f3f3",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-high": "#e9e8e7",
+              "on-surface": "#1b1c1c",
+              "on-surface-variant": "#574235",
+              "on-background": "#1b1c1c",
+              "on-primary": "#ffffff",
+              "background": "#fbf9f9",
+              "secondary": "#5f5e5e",
             },
-        }
+            spacing: {
+              "base": "8px",
+              "gutter": "24px",
+              "margin-mobile": "16px",
+              "margin-desktop": "64px",
+              "xl": "80px",
+              "lg": "48px",
+              "md": "24px",
+              "sm": "12px",
+              "xs": "4px"
+            },
+            fontFamily: {
+              sans: ["Outfit", "sans-serif"],
+              "label-lg": ["Outfit", "sans-serif"],
+              "label-bold": ["Outfit", "sans-serif"],
+              "label-sm": ["Outfit", "sans-serif"],
+              "body-md": ["Outfit", "sans-serif"],
+              "body-lg": ["Outfit", "sans-serif"],
+              "headline-md": ["Playfair Display", "serif"],
+              "headline-lg": ["Playfair Display", "serif"],
+              "display-lg": ["Playfair Display", "serif"],
+              "display-lg-mobile": ["Playfair Display", "serif"]
+            }
+          },
+        },
+      }
     </script>
-</head>
-<body class="bg-background text-on-background font-body-md antialiased overflow-x-hidden">
-<!-- TopNavBar (Shared Component) -->
-<nav aria-label="Main Navigation" class="bg-surface dark:bg-inverse-surface border-b border-outline-variant dark:border-outline flat no shadows fixed top-0 w-full z-50 flex justify-between items-center px-margin-desktop max-w-7xl mx-auto h-20 bg-white">
-<div class="flex items-center">
-<a class="font-display-lg text-primary dark:text-primary-fixed-dim text-2xl tracking-tighter" href="/">Darjeeling Public School</a>
-</div>
-<div class="hidden md:flex items-center space-x-8">
-<a class="text-primary dark:text-inverse-primary border-b-2 border-primary font-bold pb-1 font-label-bold text-label-bold transition-all duration-200" href="#academics">Academics</a>
-<a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200 font-label-bold text-label-bold" href="#admissions">Admissions</a>
-<a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200 font-label-bold text-label-bold" href="#campus">Campus</a>
-<a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200 font-label-bold text-label-bold" href="#faculty">Faculty</a>
-<a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200 font-label-bold text-label-bold" href="#about">About</a>
-<a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200 font-label-bold text-label-bold" href="contact.html">Contact</a>
-</div>
-<div class="hidden md:flex items-center space-x-4">
-<button class="text-secondary hover:text-primary transition-colors">
-<span class="material-symbols-outlined" data-icon="search">search</span>
-</button>
-<a class="bg-primary text-on-primary font-label-bold text-label-bold px-6 py-3 rounded hover:bg-primary-container transition-colors duration-200" href="#apply">Apply Now</a>
-</div>
-<button class="md:hidden text-on-surface">
-<span class="material-symbols-outlined" data-icon="menu">menu</span>
-</button>
-</nav>
-<main class="pt-24 pb-xl">
-<!-- Academic Hero -->
-<section class="px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto py-xl relative">
-<div class="absolute inset-0 z-[-1] opacity-5">
+    <style>
+      body { font-family: 'Outfit', sans-serif; }
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 1;
+      }
+      .nav-scrolled {
+        background-color: #111111 !important;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+      }
+      .fade-in-up {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      }
+      .fade-in-up.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .stagger-1 { transition-delay: 100ms; }
+      .stagger-2 { transition-delay: 200ms; }
+      .stagger-3 { transition-delay: 300ms; }
+      .modal-overlay {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(4px);
+        align-items: center;
+        justify-content: center;
+      }
+      .modal-overlay.show {
+        display: flex;
+      }
+    </style>
+  </head>
+  <body class="bg-background text-on-background font-body-md antialiased overflow-x-hidden min-h-screen flex flex-col">
+    <!-- ================= NAVBAR ================= -->
+    <nav
+      id="main-nav"
+      class="fixed top-0 z-50 w-full transition-colors duration-300 py-base px-margin-mobile md:px-margin-desktop flex justify-between items-center bg-[#111111]/95 backdrop-blur"
+    >
+      <!-- School Logo & Name -->
+      <a href="/" class="flex items-center gap-3 group">
+        <img
+          src="/images/logo2.jpg"
+          alt="Darjeeling Public School Logo"
+          class="h-10 w-10 md:h-12 md:w-12 object-contain rounded-full bg-white shadow-sm shrink-0"
+        />
+        <span class="text-white font-bold text-base sm:text-lg tracking-wide group-hover:text-orange-400 transition-colors">
+          Darjeeling Public School
+        </span>
+      </a>
 
-</div>
-<nav aria-label="Breadcrumb" class="mb-8 fade-in-up">
-<ol class="flex items-center space-x-2 text-label-sm font-label-sm text-secondary">
-<li><a class="hover:text-primary transition-colors" href="/">Home</a></li>
-<li><span class="material-symbols-outlined text-[14px]">chevron_right</span></li>
-<li aria-current="page" class="text-primary font-medium">Academics &amp; Curriculum</li>
-</ol>
-</nav>
-<div class="max-w-3xl">
-<h1 class="font-display-lg-mobile md:font-display-lg text-headline-lg-mobile md:text-display-lg text-on-background mb-6 fade-in-up stagger-1">
-                    ACADEMICS &amp; CURRICULUM
-                </h1>
-<p class="font-headline-md text-headline-md text-primary mb-6 fade-in-up stagger-2">
-                    Building Knowledge, Character &amp; Excellence
-                </p>
-<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 fade-in-up stagger-3">
-                    At Darjeeling Public School, our academic framework is built upon the rigorous guidelines of the CBSE board, ensuring a comprehensive and modern educational journey that prepares students for global challenges.
-                </p>
-<div class="flex flex-col sm:flex-row gap-4 fade-in-up stagger-3">
-<a class="bg-primary text-on-primary font-label-bold text-label-bold px-8 py-4 rounded text-center hover:bg-primary-container transition-all hover:-translate-y-1" href="#curriculum-grid">
-                        Explore Curriculum
-                    </a>
-<a class="bg-transparent border-2 border-on-background text-on-background font-label-bold text-label-bold px-8 py-4 rounded text-center hover:bg-surface-container-high transition-all" href="#approach">
-                        Our Academic Approach
-                    </a>
-</div>
-</div>
-</section>
-<!-- Academic Overview -->
-<section class="px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto py-xl">
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter items-center">
-<div class="relative fade-in-up">
-<div class="aspect-[4/3] rounded bg-surface-container overflow-hidden border border-outline-variant relative group">
-<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A brightly lit, modern classroom at a prestigious academy. Students in neat uniforms are engaged in a collaborative learning session around modular white desks. Sunlight streams through large, grid-paned windows, highlighting the clean, white and warm wood tones of the room. The atmosphere is focused, professional, and forward-thinking." src="https://lh3.googleusercontent.com/aida/AP1WRLtpygD5Vmpa41V_Ha4p-6_sIs2KqNE_QidTrP26cogCUV5wa7-PYc0_dRgmfyGN2e_Zt_aFeO7OFTIL0mTZd-y7PWzxHx6LFIhnDlLEtPriy2mFT4umB1dZcZREtnLGnhThg92SaF_wvXh-4ufKcbX0d9IER_WqC9cta4b5XaseMvlLoHljCo5S2mb6328DTGuX4BsShWb3lKFSTAxlI-icDckj0fPq6Sek7FZljIJ6JLMW1j5Ez1stNIgR"/>
-<div class="absolute inset-0 border-2 border-transparent group-hover:border-primary transition-colors duration-300 pointer-events-none rounded"></div>
-</div>
-</div>
-<div class="pl-0 lg:pl-12 fade-in-up stagger-1">
-<h2 class="font-headline-lg text-headline-lg text-on-background mb-6">Pursuing Excellence Through Education</h2>
-<p class="font-body-md text-body-md text-on-surface-variant mb-8">
-                        Our curriculum is meticulously designed to foster not just academic proficiency, but holistic growth. We prepare students for the All India Secondary School Examination (AISSE) and All India Senior School Certificate Examination (AISSCE), ensuring they meet the highest national standards while developing critical thinking and leadership skills.
-                    </p>
-<div class="flex flex-wrap gap-3">
-<span class="bg-surface-container-high text-on-background font-label-sm text-label-sm px-4 py-2 rounded-full border border-outline-variant">CBSE Aligned</span>
-<span class="bg-surface-container-high text-on-background font-label-sm text-label-sm px-4 py-2 rounded-full border border-outline-variant">All-Round Development</span>
-<span class="bg-surface-container-high text-on-background font-label-sm text-label-sm px-4 py-2 rounded-full border border-outline-variant">Modern Learning</span>
-<span class="bg-surface-container-high text-on-background font-label-sm text-label-sm px-4 py-2 rounded-full border border-outline-variant">Future Ready</span>
-</div>
-</div>
-</div>
-</section>
-</main>
-<!-- Footer (Shared Component) -->
-<footer class="bg-inverse-surface dark:bg-surface-container-lowest border-t-2 border-primary dark:border-primary-container w-full py-lg px-margin-desktop flex flex-col md:flex-row justify-between items-center text-on-secondary-fixed-variant dark:text-secondary">
-<div class="mb-6 md:mb-0 text-center md:text-left">
-<span class="font-headline-md text-headline-md text-primary-fixed-dim dark:text-primary block mb-2">Darjeeling Public School</span>
-<span class="font-label-sm text-label-sm">© 2024 Darjeeling Public School. All Rights Reserved.</span>
-</div>
-<div class="flex flex-wrap justify-center gap-6 font-label-sm text-label-sm">
-<a class="hover:text-primary-fixed dark:hover:text-primary-container transition-colors focus:ring-2 focus:ring-primary-fixed outline-none rounded px-1" href="#">Privacy Policy</a>
-<a class="hover:text-primary-fixed dark:hover:text-primary-container transition-colors focus:ring-2 focus:ring-primary-fixed outline-none rounded px-1" href="#">Terms of Service</a>
-<a class="hover:text-primary-fixed dark:hover:text-primary-container transition-colors focus:ring-2 focus:ring-primary-fixed outline-none rounded px-1" href="#">Alumni</a>
-<a class="hover:text-primary-fixed dark:hover:text-primary-container transition-colors focus:ring-2 focus:ring-primary-fixed outline-none rounded px-1" href="#">Careers</a>
-</div>
-</footer>
-<script>
-        // Simple Intersection Observer for fade-in animations
-        document.addEventListener('DOMContentLoaded', () => {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, { threshold: 0.1 });
+      <!-- ================= DESKTOP NAVIGATION ================= -->
+      <div class="hidden md:flex items-center space-x-gutter">
+        <a href="/" class="text-white hover:text-orange-400 transition-colors text-label-lg font-label-lg">Home</a>
+        <a href="/about.html" class="text-white hover:text-orange-400 transition-colors text-label-lg font-label-lg">About Us</a>
+        <a href="/academics.html" class="text-orange-400 transition-colors text-label-lg font-label-lg font-bold">Academics</a>
+        <a href="/facilities.html" class="text-white hover:text-orange-400 transition-colors text-label-lg font-label-lg">Facilities</a>
+        <a href="/gallery.html" class="text-white hover:text-orange-400 transition-colors text-label-lg font-label-lg">Gallery</a>
+        <a href="/contact.html" class="text-white hover:text-orange-400 transition-colors text-label-lg font-label-lg">Contact</a>
+        <a href="#" onclick="openNoticeModal(event)" class="text-white hover:text-orange-400 transition-colors text-label-lg font-label-lg">Notices</a>
+      </div>
 
-            document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
+      <!-- ================= RIGHT SIDE ================= -->
+      <div class="flex items-center gap-4">
+        <!-- MOBILE NOTICES - ALWAYS VISIBLE -->
+        <button
+          type="button"
+          onclick="openNoticeModal(event)"
+          class="md:hidden text-white text-sm font-semibold hover:text-orange-400 transition-colors"
+        >
+          Notices
+        </button>
+
+        <!-- Admission Button -->
+        <a
+          href="/admission.html"
+          class="hidden md:inline-flex items-center justify-center bg-primary-container text-white px-6 py-2 rounded font-label-lg text-label-lg hover:bg-primary transition-all shadow"
+        >
+          Admission Open
+        </a>
+
+        <!-- Mobile Menu Button -->
+        <button
+          type="button"
+          id="mobile-menu-btn"
+          class="md:hidden text-white p-1 focus:outline-none"
+          aria-label="Toggle Menu"
+        >
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- ================= MOBILE MENU ================= -->
+    <div
+      id="mobile-menu"
+      class="hidden md:hidden fixed top-16 left-0 right-0 z-40 bg-black/95 border-t border-orange-500/30 p-5 shadow-xl transition-all"
+    >
+      <div class="flex flex-col gap-4">
+        <a href="/" class="text-white hover:text-orange-400 transition-colors text-label-lg font-label-lg">Home</a>
+        <a href="/about.html" class="text-white hover:text-orange-400 transition-colors text-label-lg font-label-lg">About Us</a>
+        <a href="/academics.html" class="text-orange-400 transition-colors text-label-lg font-label-lg font-bold">Academics</a>
+        <a href="/facilities.html" class="text-white hover:text-orange-400 transition-colors text-label-lg font-label-lg">Facilities</a>
+        <a href="/gallery.html" class="text-white hover:text-orange-400 transition-colors text-label-lg font-label-lg">Gallery</a>
+        <a href="/contact.html" class="text-white hover:text-orange-400 transition-colors text-label-lg font-label-lg">Contact</a>
+        <a href="/notices.html" class="text-white hover:text-orange-400 transition-colors text-label-lg font-label-lg">Notices</a>
+        <a href="/admission.html" class="text-orange-400 hover:text-orange-300 transition-colors text-label-lg font-label-lg font-semibold">Admission Open</a>
+      </div>
+    </div>
+
+    <!-- Main Content Section (Preserved Original Content) -->
+    <main class="flex-grow pt-24 pb-xl">
+      <!-- Academic Hero -->
+      <section class="px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto py-xl relative">
+        <div class="absolute inset-0 z-[-1] opacity-5"></div>
+        <nav aria-label="Breadcrumb" class="mb-8 fade-in-up">
+          <ol class="flex items-center space-x-2 text-label-sm font-label-sm text-secondary">
+            <li><a class="hover:text-primary transition-colors" href="/">Home</a></li>
+            <li><span class="material-symbols-outlined text-[14px]">chevron_right</span></li>
+            <li aria-current="page" class="text-primary font-medium">Academics &amp; Curriculum</li>
+          </ol>
+        </nav>
+        <div class="max-w-3xl">
+          <h1 class="font-display-lg-mobile md:font-display-lg text-4xl md:text-6xl text-on-background mb-6 fade-in-up stagger-1">
+            ACADEMICS &amp; CURRICULUM
+          </h1>
+          <p class="font-headline-md text-2xl md:text-3xl text-primary mb-6 fade-in-up stagger-2">
+            Building Knowledge, Character &amp; Excellence
+          </p>
+          <p class="font-body-lg text-lg text-on-surface-variant mb-10 fade-in-up stagger-3">
+            At Darjeeling Public School, our academic framework is built upon the rigorous guidelines of the CBSE board, ensuring a comprehensive and modern educational journey that prepares students for global challenges.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 fade-in-up stagger-3">
+            <a class="bg-primary text-on-primary font-label-bold px-8 py-4 rounded text-center hover:bg-primary-container transition-all hover:-translate-y-1" href="#curriculum-grid">
+              Explore Curriculum
+            </a>
+            <a class="bg-transparent border-2 border-on-background text-on-background font-label-bold px-8 py-4 rounded text-center hover:bg-surface-container-high transition-all" href="#approach">
+              Our Academic Approach
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Academic Overview -->
+      <section id="approach" class="px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto py-xl">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter items-center">
+          <div class="relative fade-in-up">
+            <div class="aspect-[4/3] rounded bg-surface-container-low overflow-hidden border border-outline-variant relative group">
+              <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A brightly lit, modern classroom at a prestigious academy. Students in neat uniforms are engaged in a collaborative learning session around modular white desks. Sunlight streams through large, grid-paned windows, highlighting the clean, white and warm wood tones of the room. The atmosphere is focused, professional, and forward-thinking." src="https://lh3.googleusercontent.com/aida/AP1WRLtpygD5Vmpa41V_Ha4p-6_sIs2KqNE_QidTrP26cogCUV5wa7-PYc0_dRgmfyGN2e_Zt_aFeO7OFTIL0mTZd-y7PWzxHx6LFIhnDlLEtPriy2mFT4umB1dZcZREtnLGnhThg92SaF_wvXh-4ufKcbX0d9IER_WqC9cta4b5XaseMvlLoHljCo5S2mb6328DTGuX4BsShWb3lKFSTAxlI-icDckj0fPq6Sek7FZljIJ6JLMW1j5Ez1stNIgR"/>
+              <div class="absolute inset-0 border-2 border-transparent group-hover:border-primary transition-colors duration-300 pointer-events-none rounded"></div>
+            </div>
+          </div>
+          <div class="pl-0 lg:pl-12 fade-in-up stagger-1">
+            <h2 class="font-headline-lg text-3xl md:text-4xl text-on-background mb-6">Pursuing Excellence Through Education</h2>
+            <p class="font-body-md text-base text-on-surface-variant mb-8 leading-relaxed">
+              Our curriculum is meticulously designed to foster not just academic proficiency, but holistic growth. We prepare students for the All India Secondary School Examination (AISSE) and All India Senior School Certificate Examination (AISSCE), ensuring they meet the highest national standards while developing critical thinking and leadership skills.
+            </p>
+            <div class="flex flex-wrap gap-3">
+              <span class="bg-surface-container-high text-on-background font-label-sm text-xs font-semibold px-4 py-2 rounded-full border border-outline-variant">CBSE Aligned</span>
+              <span class="bg-surface-container-high text-on-background font-label-sm text-xs font-semibold px-4 py-2 rounded-full border border-outline-variant">All-Round Development</span>
+              <span class="bg-surface-container-high text-on-background font-label-sm text-xs font-semibold px-4 py-2 rounded-full border border-outline-variant">Modern Learning</span>
+              <span class="bg-surface-container-high text-on-background font-label-sm text-xs font-semibold px-4 py-2 rounded-full border border-outline-variant">Future Ready</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="bg-inverse-surface dark:bg-on-background text-primary-fixed dark:text-primary-fixed-dim font-body-md text-body-md full-width flat no shadows mt-auto">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-mobile md:px-margin-desktop py-xl max-w-7xl mx-auto">
+        <div>
+          <h3 class="font-headline-md text-2xl font-bold text-inverse-on-surface mb-6">DPS</h3>
+          <p class="mb-2 text-tertiary-fixed">Madhepura, Bihar - 852113</p>
+          <p class="mb-2 text-tertiary-fixed">+91 94725 33451</p>
+          <p class="text-tertiary-fixed">info@dpsmadhepura.edu.in</p>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <h4 class="font-label-lg text-sm font-semibold text-inverse-on-surface mb-4">School Info</h4>
+            <ul class="space-y-2">
+              <li>
+                <a class="text-tertiary-fixed hover:text-primary-fixed-dim transition-opacity hover:opacity-80" href="/about.html">
+                  About Us
+                </a>
+              </li>
+              <li>
+                <a class="text-tertiary-fixed hover:text-primary-fixed-dim transition-opacity hover:opacity-80" href="/academics.html">
+                  Academics
+                </a>
+              </li>
+              <li>
+                <a class="text-tertiary-fixed hover:text-primary-fixed-dim transition-opacity hover:opacity-80" href="/admission.html">
+                  Admissions
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-label-lg text-sm font-semibold text-inverse-on-surface mb-4">Quick Links</h4>
+            <ul class="space-y-2">
+              <li>
+                <button type="button" onclick="openNewsModal(event)" class="text-tertiary-fixed hover:text-primary-fixed-dim transition-opacity hover:opacity-80">
+                  News (2)
+                </button>
+              </li>
+              <li>
+                <button type="button" onclick="openNoticeModal(event)" class="text-tertiary-fixed hover:text-primary-fixed-dim transition-opacity hover:opacity-80">
+                  Notices (3)
+                </button>
+              </li>
+              <li>
+                <a class="text-tertiary-fixed hover:text-primary-fixed-dim transition-opacity hover:opacity-80" href="/contact.html">
+                  Contact
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="flex flex-col items-start md:items-end">
+          <select onchange="if(this.value) window.location.href=this.value" class="bg-transparent border border-outline text-inverse-on-surface rounded p-2 mb-6 w-full max-w-xs focus:border-primary focus:ring-0">
+            <option value="" class="bg-zinc-900 text-white">Important Links</option>
+            <option value="/academics.html" class="bg-zinc-900 text-white">CBSE Mandate</option>
+            <option value="/admission.html" class="bg-zinc-900 text-white">Student Portal</option>
+          </select>
+          <div class="flex gap-4">
+            <a class="w-10 h-10 rounded-full border border-outline flex items-center justify-center text-inverse-on-surface hover:bg-primary-container hover:border-primary-container transition-all" href="#">FB</a>
+            <a class="w-10 h-10 rounded-full border border-outline flex items-center justify-center text-inverse-on-surface hover:bg-primary-container hover:border-primary-container transition-all" href="#">IG</a>
+            <a class="w-10 h-10 rounded-full border border-outline flex items-center justify-center text-inverse-on-surface hover:bg-primary-container hover:border-primary-container transition-all" href="#">X</a>
+            <a class="w-10 h-10 rounded-full border border-outline flex items-center justify-center text-inverse-on-surface hover:bg-primary-container hover:border-primary-container transition-all" href="#">YT</a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-outline/30 px-margin-mobile md:px-margin-desktop py-6 flex flex-col md:flex-row justify-between items-center text-sm text-tertiary-fixed max-w-7xl mx-auto">
+        <p>© 2024 Darjeeling Public School. All rights reserved.</p>
+        <p className="mt-2 md:mt-0">CBSE AFFILIATION NO: XXXXXX</p>
+      </div>
+    </footer>
+
+    <!-- ================= NOTICE MODAL ================= -->
+    <div id="noticeModal" class="modal-overlay" onclick="handleModalOverlayClick(event, 'noticeModal')">
+      <div class="relative w-[90%] max-w-[600px] max-h-[85vh] overflow-y-auto rounded-2xl bg-zinc-950 p-6 text-white border border-orange-500/30 shadow-2xl">
+        <div class="flex items-center justify-between pb-4 border-b border-zinc-800">
+          <h3 class="text-xl font-bold text-white">School Notices & Updates</h3>
+          <button type="button" onclick="closeModal('noticeModal')" class="text-gray-400 hover:text-white text-2xl font-bold leading-none">&times;</button>
+        </div>
+        <div class="mt-5 space-y-4">
+          <div class="rounded-xl border border-orange-500/30 bg-zinc-900/90 p-5 transition-all hover:border-orange-500/60">
+            <p class="mb-2 text-xs font-bold uppercase tracking-wider text-orange-500">2024-03-10</p>
+            <h4 class="text-lg font-bold text-white">Term-II Exam routine</h4>
+            <p class="mt-2 text-sm leading-relaxed text-gray-300">Routine for Term-II exam 23-24</p>
+          </div>
+          <div class="rounded-xl border border-orange-500/30 bg-zinc-900/90 p-5 transition-all hover:border-orange-500/60">
+            <p class="mb-2 text-xs font-bold uppercase tracking-wider text-orange-500">2024-01-20</p>
+            <h4 class="text-lg font-bold text-white">Republic Day Invitation</h4>
+            <p class="mt-2 text-sm leading-relaxed text-gray-300">Invitation for Republic Day & Saraswati Puja</p>
+          </div>
+          <div class="rounded-xl border border-orange-500/30 bg-zinc-900/90 p-5 transition-all hover:border-orange-500/60">
+            <p class="mb-2 text-xs font-bold uppercase tracking-wider text-orange-500">2023-12-05</p>
+            <h4 class="text-lg font-bold text-white">Formative Assessment II</h4>
+            <p class="mt-2 text-sm leading-relaxed text-gray-300">Time Table for Formative Assessment II</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= NEWS MODAL ================= -->
+    <div id="newsModal" class="modal-overlay" onclick="handleModalOverlayClick(event, 'newsModal')">
+      <div class="relative w-[90%] max-w-[600px] max-h-[85vh] overflow-y-auto rounded-2xl bg-zinc-950 p-6 text-white border border-orange-500/30 shadow-2xl">
+        <div class="flex items-center justify-between pb-4 border-b border-zinc-800">
+          <h3 class="text-xl font-bold text-white">All News</h3>
+          <button type="button" onclick="closeModal('newsModal')" class="text-gray-400 hover:text-white text-2xl font-bold leading-none">&times;</button>
+        </div>
+        <div class="mt-5 space-y-4">
+          <div class="rounded-xl border border-orange-500/30 bg-zinc-900/90 p-5">
+            <p class="mb-2 text-xs font-bold text-orange-500">2024-02-15</p>
+            <h4 class="text-lg font-bold text-white">DJPS Pride - Ajay Kumar</h4>
+            <p class="mt-2 text-sm text-gray-300">IIT NDA Qualified 2025 Batch</p>
+          </div>
+          <div class="rounded-xl border border-orange-500/30 bg-zinc-900/90 p-5">
+            <p class="mb-2 text-xs font-bold text-orange-500">2024-01-10</p>
+            <h4 class="text-lg font-bold text-white">Alumni Success - Pooja Kumari</h4>
+            <p class="mt-2 text-sm text-gray-300">AIIMS Bhopal Batch 2019</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Interactive Scripts -->
+    <script>
+      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      if (mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener('click', () => {
+          mobileMenu.classList.toggle('hidden');
         });
+      }
+
+      function openNoticeModal(e) {
+        if (e) e.preventDefault();
+        const modal = document.getElementById('noticeModal');
+        if (modal) modal.classList.add('show');
+      }
+
+      function openNewsModal(e) {
+        if (e) e.preventDefault();
+        const modal = document.getElementById('newsModal');
+        if (modal) modal.classList.add('show');
+      }
+
+      function closeModal(id) {
+        const modal = document.getElementById(id);
+        if (modal) modal.classList.remove('show');
+      }
+
+      function handleModalOverlayClick(e, id) {
+        if (e.target.id === id || e.target.classList.contains('modal-overlay')) {
+          closeModal(id);
+        }
+      }
+
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          closeModal('noticeModal');
+          closeModal('newsModal');
+        }
+      });
+
+      window.addEventListener('scroll', () => {
+        const nav = document.getElementById('main-nav');
+        if (nav) {
+          if (window.scrollY > 20) {
+            nav.classList.add('nav-scrolled');
+          } else {
+            nav.classList.remove('nav-scrolled');
+          }
+        }
+      });
+
+      // Observer for scroll animation
+      document.addEventListener('DOMContentLoaded', () => {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+            }
+          });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
+      });
     </script>
-</body></html>
+  </body>
+</html>

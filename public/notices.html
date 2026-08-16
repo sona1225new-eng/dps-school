@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html class="light" lang="en">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>School Gallery - Darjeeling Public School</title>
+    <title>Notices & Updates - Darjeeling Public School</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com" rel="preconnect" />
-    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
     <script id="tailwind-config">
@@ -27,9 +27,7 @@
               "outline-variant": "#dec1af",
               "surface-container-low": "#f5f3f3",
               "surface-container-lowest": "#ffffff",
-              "surface-container": "#efeded",
-              "surface-variant": "#e3e2e2",
-              "surface": "#fbf9f9",
+              "surface-container-high": "#e9e8e7",
               "on-surface": "#1b1c1c",
               "on-surface-variant": "#574235",
               "on-background": "#1b1c1c",
@@ -60,35 +58,15 @@
               "display-lg": ["Playfair Display", "serif"],
               "display-lg-mobile": ["Playfair Display", "serif"]
             }
-          }
-        }
+          },
+        },
       }
     </script>
     <style>
-      body {
-        font-family: 'Outfit', sans-serif;
-        background-color: #fbf9f9;
-        color: #1b1c1c;
-      }
+      body { font-family: 'Outfit', sans-serif; }
       .nav-scrolled {
         background-color: #111111 !important;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-      }
-      .gallery-item {
-        transition: all 0.3s ease;
-      }
-      .gallery-item:hover {
-        transform: translateY(-4px);
-        border-color: #f57c00;
-        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
-      }
-      .gallery-item.hidden {
-        display: none;
-      }
-      .filter-btn.active {
-        background-color: #1b1c1c;
-        color: #ffffff;
-        border-color: #1b1c1c;
       }
       .modal-overlay {
         display: none;
@@ -109,7 +87,7 @@
       }
     </style>
   </head>
-  <body class="antialiased min-h-screen flex flex-col font-body-md text-body-md selection:bg-primary-container selection:text-white">
+  <body class="bg-background text-on-background font-body-md antialiased overflow-x-hidden min-h-screen flex flex-col">
     <!-- ================= NAVBAR ================= -->
     <nav
       id="main-nav"
@@ -133,21 +111,20 @@
         <a href="/about.html" class="text-white hover:text-orange-400 transition-colors text-label-lg font-label-lg">About Us</a>
         <a href="/academics.html" class="text-white hover:text-orange-400 transition-colors text-label-lg font-label-lg">Academics</a>
         <a href="/facilities.html" class="text-white hover:text-orange-400 transition-colors text-label-lg font-label-lg">Facilities</a>
-        <a href="/gallery.html" class="text-orange-400 transition-colors text-label-lg font-label-lg font-bold">Gallery</a>
+        <a href="/gallery.html" class="text-white hover:text-orange-400 transition-colors text-label-lg font-label-lg">Gallery</a>
         <a href="/contact.html" class="text-white hover:text-orange-400 transition-colors text-label-lg font-label-lg">Contact</a>
-        <a href="#" onclick="openNoticeModal(event)" class="text-white hover:text-orange-400 transition-colors text-label-lg font-label-lg">Notices</a>
+        <a href="/notices.html" class="text-orange-400 transition-colors text-label-lg font-label-lg font-bold">Notices</a>
       </div>
 
       <!-- ================= RIGHT SIDE ================= -->
       <div class="flex items-center gap-4">
         <!-- MOBILE NOTICES - ALWAYS VISIBLE -->
-        <button
-          type="button"
-          onclick="openNoticeModal(event)"
-          class="md:hidden text-white text-sm font-semibold hover:text-orange-400 transition-colors"
+        <a
+          href="/notices.html"
+          class="md:hidden text-orange-400 text-sm font-semibold transition-colors"
         >
           Notices
-        </button>
+        </a>
 
         <!-- Admission Button -->
         <a
@@ -179,107 +156,71 @@
         <a href="/about.html" class="text-white hover:text-orange-400 transition-colors text-label-lg font-label-lg">About Us</a>
         <a href="/academics.html" class="text-white hover:text-orange-400 transition-colors text-label-lg font-label-lg">Academics</a>
         <a href="/facilities.html" class="text-white hover:text-orange-400 transition-colors text-label-lg font-label-lg">Facilities</a>
-        <a href="/gallery.html" class="text-orange-400 transition-colors text-label-lg font-label-lg font-bold">Gallery</a>
+        <a href="/gallery.html" class="text-white hover:text-orange-400 transition-colors text-label-lg font-label-lg">Gallery</a>
         <a href="/contact.html" class="text-white hover:text-orange-400 transition-colors text-label-lg font-label-lg">Contact</a>
-        <a href="/notices.html" class="text-white hover:text-orange-400 transition-colors text-label-lg font-label-lg">Notices</a>
+        <a href="/notices.html" class="text-orange-400 transition-colors text-label-lg font-label-lg font-bold">Notices</a>
         <a href="/admission.html" class="text-orange-400 hover:text-orange-300 transition-colors text-label-lg font-label-lg font-semibold">Admission Open</a>
       </div>
     </div>
 
-    <!-- Main Content Canvas (Preserved Original Content) -->
-    <main class="flex-grow pt-20">
-      <!-- Hero Section -->
-      <section class="bg-surface-container-lowest py-xl border-b border-outline-variant">
-        <div class="max-w-7xl mx-auto px-margin-desktop text-center">
-          <div class="inline-flex items-center space-x-2 text-label-sm font-label-sm text-secondary mb-6 uppercase tracking-wider text-xs">
-            <a class="hover:text-primary transition-colors" href="/">Home</a>
-            <span class="w-1.5 h-1.5 bg-primary-container rounded-full inline-block"></span>
-            <span class="text-on-surface font-semibold">Gallery</span>
-          </div>
-          <h1 class="font-display-lg text-4xl md:text-6xl text-on-surface mb-6 relative inline-block font-bold">
-            School Gallery
-            <div class="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-primary-container"></div>
-          </h1>
-          <p class="font-body-lg text-lg text-on-surface-variant max-w-2xl mx-auto mt-8">
-            Explore the vibrant life, stunning campus, and momentous occasions that define the Darjeeling Public School experience.
-          </p>
-        </div>
-      </section>
+    <!-- Main Section (Notices & News) -->
+    <main class="flex-grow pt-24 pb-16">
+      <section class="py-xl px-margin-mobile md:px-margin-desktop bg-surface-container-lowest">
+        <div class="max-w-7xl mx-auto grid gap-lg lg:grid-cols-2 items-start">
+          <!-- Notices Column -->
+          <div class="flex flex-col gap-6 rounded-3xl border border-outline-variant bg-surface-bright p-6">
+            <div class="flex flex-wrap items-end justify-between gap-4 border-b border-outline-variant/50 pb-4">
+              <h2 class="font-headline-md text-3xl font-bold text-on-background">Notices &amp; Circulars</h2>
+              <span class="text-primary-container font-semibold text-sm">3 ACTIVE NOTICES</span>
+            </div>
 
-      <!-- Gallery Section -->
-      <section class="py-xl bg-background">
-        <div class="max-w-7xl mx-auto px-margin-desktop">
-          <!-- Filters -->
-          <div class="flex flex-wrap justify-center gap-sm mb-lg" id="gallery-filters">
-            <button class="filter-btn active px-6 py-2 border border-outline-variant text-on-surface font-label-bold text-sm font-semibold rounded hover:border-primary-container hover:text-primary-container transition-all" data-filter="all">All</button>
-            <button class="filter-btn px-6 py-2 border border-outline-variant text-on-surface font-label-bold text-sm font-semibold rounded hover:border-primary-container hover:text-primary-container transition-all" data-filter="campus">Campus</button>
-            <button class="filter-btn px-6 py-2 border border-outline-variant text-on-surface font-label-bold text-sm font-semibold rounded hover:border-primary-container hover:text-primary-container transition-all" data-filter="events">Events</button>
-            <button class="filter-btn px-6 py-2 border border-outline-variant text-on-surface font-label-bold text-sm font-semibold rounded hover:border-primary-container hover:text-primary-container transition-all" data-filter="activities">Activities</button>
-            <button class="filter-btn px-6 py-2 border border-outline-variant text-on-surface font-label-bold text-sm font-semibold rounded hover:border-primary-container hover:text-primary-container transition-all" data-filter="achievements">Achievements</button>
-          </div>
-
-          <!-- Bento Grid Photo Gallery -->
-          <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-gutter" id="gallery-grid">
-            <!-- Item 1 (Large) -->
-            <div class="gallery-item md:col-span-2 md:row-span-2 relative group overflow-hidden bg-surface-container-lowest border border-outline-variant rounded-xl cursor-pointer" data-category="campus" onclick="openLightbox('https://djpsmadhepura.com/wp-content/uploads/2021/04/IMG20200108104451-scaled.jpg', 'Historic main building facade bathed in warm morning sunlight, showcasing classic academic architecture.')">
-              <div class="aspect-w-16 aspect-h-12 w-full h-full min-h-[300px]">
-                <img alt="Main Building" class="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105" src="https://djpsmadhepura.com/wp-content/uploads/2021/04/IMG20200108104451-scaled.jpg"/>
+            <div class="grid gap-4">
+              <div class="w-full text-left rounded-2xl border border-outline-variant bg-surface p-5 shadow-sm">
+                <p class="text-primary-container font-semibold text-sm mb-2">2024-03-10</p>
+                <h4 class="text-lg font-bold text-on-surface leading-snug">Term-II Exam routine</h4>
+                <p class="text-sm text-on-surface-variant mt-2 leading-relaxed">Routine for Term-II exam 23-24 for all classes.</p>
               </div>
-              <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                <div class="text-white translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                  <span class="bg-primary-container text-white text-xs font-bold px-2 py-1 uppercase tracking-wider mb-2 inline-block rounded">Campus</span>
-                  <h3 class="font-headline-md text-2xl font-bold leading-tight">Historic Main Building</h3>
+
+              <div class="w-full text-left rounded-2xl border border-outline-variant bg-surface p-5 shadow-sm">
+                <p class="text-primary-container font-semibold text-sm mb-2">2024-01-20</p>
+                <h4 class="text-lg font-bold text-on-surface leading-snug">Republic Day Invitation</h4>
+                <p class="text-sm text-on-surface-variant mt-2 leading-relaxed">Invitation for Republic Day &amp; Saraswati Puja celebrations on campus.</p>
+              </div>
+
+              <div class="w-full text-left rounded-2xl border border-outline-variant bg-surface p-5 shadow-sm">
+                <p class="text-primary-container font-semibold text-sm mb-2">2023-12-05</p>
+                <h4 class="text-lg font-bold text-on-surface leading-snug">Formative Assessment II</h4>
+                <p class="text-sm text-on-surface-variant mt-2 leading-relaxed">Time Table and syllabus details for Formative Assessment II.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- News Column -->
+          <div class="flex flex-col gap-6 rounded-3xl border border-outline-variant bg-surface-bright p-6">
+            <div class="flex flex-wrap items-end justify-between gap-4 border-b border-outline-variant/50 pb-4">
+              <h2 class="font-headline-md text-3xl font-bold text-on-background">School News &amp; Achievements</h2>
+              <span class="text-primary-container font-semibold text-sm">2 RECENT STORIES</span>
+            </div>
+
+            <div class="grid gap-4">
+              <div class="relative overflow-hidden rounded-2xl shadow-md h-[260px] group">
+                <img
+                  className="absolute inset-0 w-full h-full object-cover"
+                  alt="DJPS Pride"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7Fj4LUfyC1ugjUWsAxefN7s1xyFo1PyEVd5E0V7W8z9as05MJSc2QYoBNmNnXLgjwUKvgLmk0FftOkctMhgUrm0aZLRPP8t8vZi5XMVR6kiV4knYsSbwaO8c4CKr1nBDbzhl9EUuYuNUo4gN02JKkw0bC0pjBVcs-FcuKs3ohyHz_Qrl9Ulj10s-UAbvvCqrlP2SOPgoqzl--BMB-4JpYl8X1F4GBaThZSbB1jrgfkPk52iEPEL9zzw"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent"></div>
+                <div class="absolute bottom-0 left-0 p-6">
+                  <p class="text-orange-400 text-xs font-bold mb-1">FEBRUARY 15, 2024</p>
+                  <h3 class="text-white font-bold text-xl">DJPS Pride - Ajay Kumar</h3>
+                  <p class="text-gray-300 text-sm mt-1">IIT NDA Qualified 2025 Batch</p>
                 </div>
               </div>
-            </div>
 
-            <!-- Item 2 -->
-            <div class="gallery-item relative group overflow-hidden bg-surface-container-lowest border border-outline-variant rounded-xl cursor-pointer" data-category="events" onclick="openLightbox('https://djpsmadhepura.com/wp-content/uploads/2021/04/IMG20201114195531-scaled.jpg', 'School Event & Ceremony')">
-              <div class="aspect-w-1 aspect-h-1 w-full">
-                <div class="bg-cover bg-center w-full h-64 transition-transform duration-700 group-hover:scale-105" style="background-image: url('https://djpsmadhepura.com/wp-content/uploads/2021/04/IMG20201114195531-scaled.jpg')"></div>
-              </div>
-              <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <span class="material-symbols-outlined text-white text-4xl">zoom_in</span>
-              </div>
-            </div>
-
-            <!-- Item 3 -->
-            <div class="gallery-item relative group overflow-hidden bg-surface-container-lowest border border-outline-variant rounded-xl cursor-pointer" data-category="activities" onclick="openLightbox('https://djpsmadhepura.com/wp-content/uploads/2021/04/IMG20200225141845-scaled.jpg', 'Students engaged in academic and co-curricular activities.')">
-              <div class="aspect-w-1 aspect-h-1 w-full">
-                <img class="object-cover w-full h-64 transition-transform duration-700 group-hover:scale-105" alt="Activity" src="https://djpsmadhepura.com/wp-content/uploads/2021/04/IMG20200225141845-scaled.jpg"/>
-              </div>
-              <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <span class="material-symbols-outlined text-white text-4xl">zoom_in</span>
-              </div>
-            </div>
-
-            <!-- Item 4 (Tall) -->
-            <div class="gallery-item md:row-span-2 relative group overflow-hidden bg-surface-container-lowest border border-outline-variant rounded-xl cursor-pointer" data-category="achievements" onclick="openLightbox('https://djpsmadhepura.com/wp-content/uploads/2022/12/WhatsApp-Image-2022-12-15-at-2.26.33-PM.jpeg', 'Moments of student pride, awards and achievements.')">
-              <div class="aspect-w-3 aspect-h-4 w-full h-full">
-                <div class="bg-cover bg-center w-full h-full min-h-[350px] transition-transform duration-700 group-hover:scale-105" style="background-image: url('https://djpsmadhepura.com/wp-content/uploads/2022/12/WhatsApp-Image-2022-12-15-at-2.26.33-PM.jpeg')"></div>
-              </div>
-              <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <span class="material-symbols-outlined text-white text-4xl">zoom_in</span>
-              </div>
-            </div>
-
-            <!-- Item 5 -->
-            <div class="gallery-item relative group overflow-hidden bg-surface-container-lowest border border-outline-variant rounded-xl cursor-pointer" data-category="campus" onclick="openLightbox('https://djpsmadhepura.com/wp-content/uploads/2022/12/WhatsApp-Image-2022-12-15-at-2.22.35-PM-2.jpeg', 'Campus view and classrooms.')">
-              <div class="aspect-w-1 aspect-h-1 w-full">
-                <img class="object-cover w-full h-64 transition-transform duration-700 group-hover:scale-105" alt="Campus view" src="https://djpsmadhepura.com/wp-content/uploads/2022/12/WhatsApp-Image-2022-12-15-at-2.22.35-PM-2.jpeg"/>
-              </div>
-              <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <span class="material-symbols-outlined text-white text-4xl">zoom_in</span>
-              </div>
-            </div>
-
-            <!-- Item 6 -->
-            <div class="gallery-item relative group overflow-hidden bg-surface-container-lowest border border-outline-variant rounded-xl cursor-pointer" data-category="activities" onclick="openLightbox('https://djpsmadhepura.com/wp-content/uploads/2022/12/WhatsApp-Image-2022-12-15-at-2.25.32-PM.jpeg', 'Sports and active learning.')">
-              <div class="aspect-w-1 aspect-h-1 w-full">
-                <div class="bg-cover bg-center w-full h-64 transition-transform duration-700 group-hover:scale-105" style="background-image: url('https://djpsmadhepura.com/wp-content/uploads/2022/12/WhatsApp-Image-2022-12-15-at-2.25.32-PM.jpeg')"></div>
-              </div>
-              <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <span class="material-symbols-outlined text-white text-4xl">zoom_in</span>
+              <div class="rounded-2xl border border-outline-variant bg-surface p-5 shadow-sm">
+                <p class="text-primary-container font-semibold text-xs mb-2">JANUARY 10, 2024</p>
+                <h4 class="text-lg font-bold text-on-surface leading-snug">Alumni Success - Pooja Kumari</h4>
+                <p class="text-sm text-on-surface-variant mt-2 leading-relaxed">AIIMS Bhopal Batch 2019 alumna securing top medical achievements.</p>
               </div>
             </div>
           </div>
@@ -357,17 +298,6 @@
         <p className="mt-2 md:mt-0">CBSE AFFILIATION NO: XXXXXX</p>
       </div>
     </footer>
-
-    <!-- Lightbox Overlay -->
-    <div class="fixed inset-0 z-[100] bg-black/90 backdrop-blur-sm hidden flex items-center justify-center opacity-0 transition-opacity duration-300" id="lightbox">
-      <button class="absolute top-6 right-6 text-white hover:text-primary-container transition-colors z-[101]" id="lightbox-close">
-        <span class="material-symbols-outlined text-4xl">close</span>
-      </button>
-      <div class="max-w-5xl w-full p-4 md:p-8 flex flex-col items-center">
-        <img alt="Gallery Image" class="max-h-[80vh] object-contain shadow-2xl border border-white/10 rounded" id="lightbox-img" src=""/>
-        <p class="text-white font-body-lg text-center mt-6 max-w-2xl text-opacity-80" id="lightbox-caption"></p>
-      </div>
-    </div>
 
     <!-- ================= NOTICE MODAL ================= -->
     <div id="noticeModal" class="modal-overlay" onclick="handleModalOverlayClick(event, 'noticeModal')">
@@ -466,71 +396,6 @@
           } else {
             nav.classList.remove('nav-scrolled');
           }
-        }
-      });
-
-      // Gallery Filtering
-      document.addEventListener('DOMContentLoaded', () => {
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        const galleryItems = document.querySelectorAll('.gallery-item');
-
-        filterBtns.forEach(btn => {
-          btn.addEventListener('click', () => {
-            filterBtns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-
-            const filterValue = btn.getAttribute('data-filter');
-
-            galleryItems.forEach(item => {
-              if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
-                item.classList.remove('hidden');
-                item.style.opacity = '0';
-                setTimeout(() => item.style.opacity = '1', 50);
-              } else {
-                item.classList.add('hidden');
-              }
-            });
-          });
-        });
-      });
-
-      // Lightbox Logic
-      const lightbox = document.getElementById('lightbox');
-      const lightboxImg = document.getElementById('lightbox-img');
-      const lightboxCaption = document.getElementById('lightbox-caption');
-      const closeBtn = document.getElementById('lightbox-close');
-
-      window.openLightbox = function(imageSrc, caption) {
-        if (!imageSrc || imageSrc === 'placeholder') {
-          imageSrc = 'https://djpsmadhepura.com/wp-content/uploads/2021/04/IMG20200108104451-scaled.jpg';
-        }
-        lightboxImg.src = imageSrc;
-        lightboxCaption.textContent = caption;
-        
-        lightbox.classList.remove('hidden');
-        void lightbox.offsetWidth; 
-        lightbox.classList.remove('opacity-0');
-        document.body.style.overflow = 'hidden';
-      };
-
-      const closeLightbox = () => {
-        lightbox.classList.add('opacity-0');
-        setTimeout(() => {
-          lightbox.classList.add('hidden');
-          lightboxImg.src = '';
-          document.body.style.overflow = '';
-        }, 300);
-      };
-
-      if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
-      if (lightbox) {
-        lightbox.addEventListener('click', (e) => {
-          if (e.target === lightbox) closeLightbox();
-        });
-      }
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && lightbox && !lightbox.classList.contains('hidden')) {
-          closeLightbox();
         }
       });
     </script>
