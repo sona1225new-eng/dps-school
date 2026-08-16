@@ -282,11 +282,11 @@ function App() {
         openModal={setModalOpen}
       />
 
-      <AchieversSection />
+      <DirectorSection />
 
       <FacilitiesSection />
 
-      <DirectorSection />
+      <AchieversSection />
 
       <EducationSection />
 
