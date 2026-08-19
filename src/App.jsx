@@ -110,164 +110,163 @@ function App() {
     <div className="min-h-screen bg-black text-white">
 
       {/* ================= NAVBAR ================= */}
-    {/* ================= NAVBAR ================= */}
-<nav
-  id="main-nav"
-  className={`fixed top-0 z-50 w-full transition-colors duration-300 py-base px-margin-mobile md:px-margin-desktop flex justify-between items-center ${
-    isNavScrolled ? 'nav-scrolled' : 'bg-transparent'
-  }`}
->
-  {/* School Logo & Name */}
-  <a href="/" className="flex items-center gap-3 group">
-    <img
-      src="/images/logo2.jpg"
-      alt="Darjeeling Public School Logo"
-      className="h-10 w-10 md:h-12 md:w-12 object-contain rounded-full bg-white shadow-sm shrink-0"
-    />
-    <span className="text-white font-bold text-base sm:text-lg tracking-wide group-hover:text-orange-400 transition-colors">
-      Darjeeling Public School
-    </span>
-  </a>
+      {/* ================= NAVBAR ================= */}
+      <nav
+        id="main-nav"
+        className={`fixed top-0 z-50 w-full transition-colors duration-300 py-base px-margin-mobile md:px-margin-desktop flex justify-between items-center ${isNavScrolled ? 'nav-scrolled' : 'bg-transparent'
+          }`}
+      >
+        {/* School Logo & Name */}
+        <a href="/" className="flex items-center gap-3 group">
+          <img
+            src="/images/logo2.jpg"
+            alt="Darjeeling Public School Logo"
+            className="h-10 w-10 md:h-12 md:w-12 object-contain rounded-full bg-white shadow-sm shrink-0"
+          />
+          <span className="text-white font-bold text-base sm:text-lg tracking-wide group-hover:text-orange-400 transition-colors">
+            Darjeeling Public School
+          </span>
+        </a>
 
-  {/* ================= DESKTOP NAVIGATION ================= */}
-  <div className="hidden md:flex items-center space-x-gutter">
+        {/* ================= DESKTOP NAVIGATION ================= */}
+        <div className="hidden md:flex items-center space-x-gutter">
 
-    <a
-      href="/"
-      className="text-white hover:text-orange-400 transition-colors text-label-lg font-label-lg"
-    >
-      Home
-    </a>
-
-    <a
-      href="/about.html"
-      className="text-white hover:text-orange-400 transition-colors text-label-lg font-label-lg"
-    >
-      About Us
-    </a>
-
-    <a
-      href="/academics.html"
-      className="text-white hover:text-orange-400 transition-colors text-label-lg font-label-lg"
-    >
-      Academics
-    </a>
-
-    <a
-      href="/facilities.html"
-      className="text-white hover:text-orange-400 transition-colors text-label-lg font-label-lg"
-    >
-      Facilities
-    </a>
-
-    <a
-      href="/gallery.html"
-      className="text-white hover:text-orange-400 transition-colors text-label-lg font-label-lg"
-    >
-      Gallery
-    </a>
-
-    <a
-      href="/contact.html"
-      className="text-white hover:text-orange-400 transition-colors text-label-lg font-label-lg"
-    >
-      Contact
-    </a>
-
-    <a
-      href="#"
-      onClick={(event) => {
-        event.preventDefault();
-        setModalOpen('noticeModal');
-      }}
-      className="text-white hover:text-orange-400 transition-colors text-label-lg font-label-lg"
-    >
-      Notices
-    </a>
-
-  </div>
-
-  {/* ================= RIGHT SIDE ================= */}
-  <div className="flex items-center gap-4">
-
-    {/* MOBILE NOTICES - ALWAYS VISIBLE */}
-    <button
-      type="button"
-      onClick={() => setModalOpen('noticeModal')}
-      className="md:hidden text-white text-sm font-semibold hover:text-orange-400 transition-colors"
-    >
-      Notices
-    </button>
-
-    {/* Admission Button */}
-    <a
-      href="/admission.html"
-      className="hidden md:inline-flex items-center justify-center bg-primary-container text-white px-6 py-2 rounded font-label-lg text-label-lg hover:bg-primary transition-all"
-    >
-      CBSE MANDATE
-    </a>
-
-    {/* Mobile Menu Button */}
-    <button
-      type="button"
-      onClick={() =>
-        setIsMobileMenuOpen((value) => !value)
-      }
-      className="md:hidden text-white"
-    >
-      <span className="material-symbols-outlined">
-        menu
-      </span>
-    </button>
-
-  </div>
-</nav>
-
-      {/* ================= MOBILE MENU ================= */}
-{isMobileMenuOpen && (
-  <div className="md:hidden fixed top-16 left-0 right-0 z-40 bg-black/95 border-t border-orange-500/30 p-5 shadow-xl">
-
-    <div className="flex flex-col gap-4">
-      {[
-          'Home',
-          'About Us',
-          'Academics',
-          'Facilities',
-          'Gallery',
-          'Contact',
-          'Notices',
-          'Admission Open',
-        ].map((item) => (
           <a
-            key={item}
-            href={
-              item === 'Home'
-                ? '/'
-                : item === 'About Us'
-                ? '/about.html'
-                : item === 'Academics'
-                ? '/academics.html'
-                : item === 'Facilities'
-                ? '/facilities.html'
-                : item === 'Gallery'
-                ? '/gallery.html'
-                : item === 'Contact'
-                ? '/contact.html'
-                : item === 'Notices'
-                ? '/notices.html'
-                : item === 'Admission Open'
-                ? '/admission.html'
-                : '#'
-            }
+            href="/"
             className="text-white hover:text-orange-400 transition-colors text-label-lg font-label-lg"
           >
-            {item}
+            Home
           </a>
-        ))}
 
-      </div>
-    </div>
-  )}
+          <a
+            href="/about.html"
+            className="text-white hover:text-orange-400 transition-colors text-label-lg font-label-lg"
+          >
+            About Us
+          </a>
+
+          <a
+            href="/academics.html"
+            className="text-white hover:text-orange-400 transition-colors text-label-lg font-label-lg"
+          >
+            Academics
+          </a>
+
+          <a
+            href="#"
+            onClick={(event) => {
+              event.preventDefault();
+              setModalOpen('noticeModal');
+            }}
+            className="text-white hover:text-orange-400 transition-colors text-label-lg font-label-lg"
+          >
+            Notices
+          </a>
+
+          <a
+            href="/facilities.html"
+            className="text-white hover:text-orange-400 transition-colors text-label-lg font-label-lg"
+          >
+            Admission
+          </a>
+
+          <a
+            href="/gallery.html"
+            className="text-white hover:text-orange-400 transition-colors text-label-lg font-label-lg"
+          >
+            Gallery
+          </a>
+
+          <a
+            href="/contact.html"
+            className="text-white hover:text-orange-400 transition-colors text-label-lg font-label-lg"
+          >
+            Contact
+          </a>
+
+        </div>
+
+        {/* ================= RIGHT SIDE ================= */}
+        <div className="flex items-center gap-4">
+
+          {/* MOBILE NOTICES - ALWAYS VISIBLE */}
+          <button
+            type="button"
+            onClick={() => setModalOpen('noticeModal')}
+            className="md:hidden text-white text-sm font-semibold hover:text-orange-400 transition-colors"
+          >
+            Notices
+          </button>
+
+          {/* Admission Button */}
+          <a
+            href="/admission.html"
+            className="hidden md:inline-flex items-center justify-center bg-primary-container text-white px-6 py-2 rounded font-label-lg text-label-lg hover:bg-primary transition-all"
+          >
+            CBSE MANDATE
+          </a>
+
+          {/* Mobile Menu Button */}
+          <button
+            type="button"
+            onClick={() =>
+              setIsMobileMenuOpen((value) => !value)
+            }
+            className="md:hidden text-white"
+          >
+            <span className="material-symbols-outlined">
+              menu
+            </span>
+          </button>
+
+        </div>
+      </nav>
+
+      {/* ================= MOBILE MENU ================= */}
+      {isMobileMenuOpen && (
+        <div className="md:hidden fixed top-16 left-0 right-0 z-40 bg-black/95 border-t border-orange-500/30 p-5 shadow-xl">
+
+          <div className="flex flex-col gap-4">
+            {[
+              'Home',
+              'About Us',
+              'Academics',
+              'Notices',
+              'Admission',
+              'Gallery',
+              'Contact',
+              'Admission Open',
+            ].map((item) => (
+              <a
+                key={item}
+                href={
+                  item === 'Home'
+                    ? '/'
+                    : item === 'About Us'
+                      ? '/about.html'
+                      : item === 'Academics'
+                        ? '/academics.html'
+                        : item === 'Admission'
+                          ? '/facilities.html'
+                          : item === 'Gallery'
+                            ? '/gallery.html'
+                            : item === 'Contact'
+                              ? '/contact.html'
+                              : item === 'Notices'
+                                ? '/notices.html'
+                                : item === 'Admission Open'
+                                  ? '/admission.html'
+                                  : '#'
+                }
+                className="text-white hover:text-orange-400 transition-colors text-label-lg font-label-lg"
+              >
+                {item}
+              </a>
+            ))}
+
+          </div>
+        </div>
+      )}
 
       <HeroSection
         heroSlides={heroSlides}
@@ -282,11 +281,11 @@ function App() {
         openModal={setModalOpen}
       />
 
-      <DirectorSection />
+      <AchieversSection />
 
       <FacilitiesSection />
 
-      <AchieversSection />
+      <DirectorSection />
 
       <EducationSection />
 

@@ -47,14 +47,14 @@ const AchieversSection = () => {
               key={achiever.name}
               className="overflow-hidden rounded-[32px] border border-outline-variant bg-surface-bright shadow-lg transition-transform duration-300 hover:-translate-y-1 hover:shadow-2xl"
             >
-              <div className="relative w-full h-[300px] overflow-hidden bg-zinc-950">
+              <div className="relative w-full h-[220px] overflow-hidden bg-zinc-950">
                 <img
                   className="w-full h-full object-cover"
                   src={achiever.image}
                   alt={`${achiever.name} achiever photo`}
                 />
               </div>
-              <div className="p-6">
+              <div className="p-4">
                 <p className="text-primary-container text-sm font-semibold uppercase tracking-[0.22em] mb-3">
                   {achiever.title}
                 </p>
